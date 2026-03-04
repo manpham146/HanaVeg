@@ -4,7 +4,8 @@
         "menu": "Thực đơn",
         "about": "Giới thiệu",
         "gallery": "Bộ sưu tập",
-        "blog": "Blog"
+        "blog": "Blog",
+        "booking": "Đặt bàn"
     },
     "Index": {
         "hero": {
@@ -122,5 +123,20 @@
     "Gallery": {
         "title": "Bộ Sưu Tập",
         "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại Hana."
+    },
+    "Booking": {
+        "label": "Đặt chỗ trước",
+        "title": "Đặt Bàn",
+        "description": "Hãy đặt bàn trước để chúng tôi chuẩn bị không gian tốt nhất dành cho bạn.",
+        "name": "Họ và tên",
+        "namePlaceholder": "Nhập họ và tên",
+        "phone": "Số điện thoại",
+        "phonePlaceholder": "Nhập số điện thoại",
+        "persons": "Số người",
+        "time": "Giờ đến",
+        "date": "Ngày đến",
+        "note": "Ghi chú",
+        "notePlaceholder": "Yêu cầu đặc biệt (tùy chọn)",
+        "submit": "Xác nhận đặt bàn"
     }
 }

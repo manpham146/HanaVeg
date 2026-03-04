@@ -3,70 +3,15 @@
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { useState } from 'react';
 import HeroSwiper from '@/components/HeroSwiper';
 
 export default function Home() {
   const t = useTranslations('Index');
-  const [persons, setPersons] = useState('2');
-  const [time, setTime] = useState('18:00');
-  const [date, setDate] = useState('');
 
   return (
     <div className="flex flex-col bg-background">
       {/* 1. Hero Swiper */}
       <HeroSwiper />
-
-      {/* Booking Bar */}
-      <div className="bg-[#0B1C10] border-t border-[#A58A5C]/20">
-        <div className="container mx-auto px-6 lg:px-24 py-6">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-0">
-            <div className="text-xl font-serif text-[#A58A5C] md:w-48 shrink-0 text-center md:text-left">
-              {t('hero.bookNow')}
-            </div>
-            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-            <div className="flex flex-col gap-1 flex-1 min-w-0">
-              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.persons')}</label>
-              <select
-                value={persons}
-                onChange={e => setPersons(e.target.value)}
-                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
-              >
-                {[1,2,3,4,5,6,7,8].map(n => (
-                  <option key={n} value={n} className="bg-[#0B1C10]">{n} {n === 1 ? 'person' : 'persons'}</option>
-                ))}
-              </select>
-            </div>
-            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-            <div className="flex flex-col gap-1 flex-1 min-w-0">
-              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.time')}</label>
-              <select
-                value={time}
-                onChange={e => setTime(e.target.value)}
-                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
-              >
-                {['10:00','11:00','12:00','13:00','14:00','17:00','18:00','19:00','20:00','21:00'].map(h => (
-                  <option key={h} value={h} className="bg-[#0B1C10]">{h}</option>
-                ))}
-              </select>
-            </div>
-            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-            <div className="flex flex-col gap-1 flex-1 min-w-0">
-              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.date')}</label>
-              <input
-                type="date"
-                value={date}
-                onChange={e => setDate(e.target.value)}
-                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 [color-scheme:dark]"
-              />
-            </div>
-            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-            <Button className="bg-[#A58A5C] text-[#0F1F15] hover:bg-[#D5B67A] font-serif rounded-none px-10 py-5 text-xs tracking-widest shrink-0">
-              {t('hero.bookNow')}
-            </Button>
-          </div>
-        </div>
-      </div>
 
       {/* 2. Quality Specialties */}
       <section className="py-24 container mx-auto px-6 lg:px-24">

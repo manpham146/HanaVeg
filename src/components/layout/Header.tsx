@@ -36,6 +36,14 @@ export default function Header() {
           </a>
 
           <LanguageSwitcher />
+
+          {/* Book a Table button */}
+          <Link
+            href="/booking"
+            className="hidden md:inline-flex bg-[#A58A5C] text-[#0F1F15] hover:bg-[#D5B67A] font-serif rounded-none px-6 py-2.5 text-xs tracking-widest transition-colors items-center"
+          >
+            {t('booking').toUpperCase()}
+          </Link>
         </div>
       </div>
     </header>

@@ -4,7 +4,8 @@
         "menu": "Menu",
         "about": "About",
         "gallery": "Gallery",
-        "blog": "Blog"
+        "blog": "Blog",
+        "booking": "Book a Table"
     },
     "Index": {
         "hero": {
@@ -122,5 +123,20 @@
     "Gallery": {
         "title": "Gallery",
         "subtitle": "Explore the peaceful moments and pure vegetarian dishes at Hana."
+    },
+    "Booking": {
+        "label": "Reserve in Advance",
+        "title": "Book a Table",
+        "description": "Reserve your table ahead so we can prepare the perfect space for you.",
+        "name": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "phone": "Phone Number",
+        "phonePlaceholder": "Enter your phone number",
+        "persons": "Number of Guests",
+        "time": "Arrival Time",
+        "date": "Arrival Date",
+        "note": "Special Requests",
+        "notePlaceholder": "Any special requests (optional)",
+        "submit": "Confirm Reservation"
     }
 }
