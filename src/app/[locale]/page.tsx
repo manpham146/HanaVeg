@@ -4,13 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { useState } from 'react';
-
-const MENU_ITEMS = [
-  { key: 'item1', img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2670&auto=format&fit=crop' },
-  { key: 'item2', img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=2671&auto=format&fit=crop' },
-  { key: 'item3', img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2600&auto=format&fit=crop' },
-  { key: 'item4', img: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?q=80&w=2670&auto=format&fit=crop' },
-];
+import HeroSwiper from '@/components/HeroSwiper';
 
 export default function Home() {
   const t = useTranslations('Index');
@@ -20,103 +14,59 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-background">
-      {/* 1. Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col bg-[#0F1F15] overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-24 flex items-center flex-1 relative z-10 py-24">
-           {/* Left text */}
-           <div className="w-full lg:w-1/2 text-[#F6EFDF]">
-             <span className="text-xs tracking-[0.2em] font-sans uppercase mb-4 block opacity-70">
-               {t('hero.label')}
-             </span>
-             <h1 className="text-5xl md:text-7xl font-serif text-[#A58A5C] mb-6 leading-tight">
-               {t('hero.title')}
-             </h1>
-             <p className="text-sm md:text-base font-sans opacity-80 max-w-md leading-relaxed">
-               {t('hero.subtitle')}
-             </p>
-           </div>
-           {/* Right image overlap */}
-           <div className="hidden lg:block w-1/2 absolute right-0 top-0 bottom-0 z-0">
-             <Image 
-               src="https://images.unsplash.com/photo-1490818387583-1b0ba687007b?q=80&w=2670&auto=format&fit=crop" 
-               fill 
-               alt="Hana Restaurant"
-               className="object-cover object-center"
-               priority
-             />
-             {/* Gradient overlay to blend with dark background */}
-             <div className="absolute inset-0 bg-gradient-to-r from-[#0F1F15] via-[#0F1F15]/30 to-transparent" />
-           </div>
-        </div>
+      {/* 1. Hero Swiper */}
+      <HeroSwiper />
 
-        {/* Bottom Booking Bar — interactive inputs */}
-        <div className="relative z-20 bg-[#0B1C10] border-t border-[#A58A5C]/20">
-          <div className="container mx-auto px-6 lg:px-24 py-6">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-0">
-              {/* Title */}
-              <div className="text-xl font-serif text-[#A58A5C] md:w-48 shrink-0 text-center md:text-left">
-                {t('hero.bookNow')}
-              </div>
-              
-              {/* Divider */}
-              <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-
-              {/* Persons */}
-              <div className="flex flex-col gap-1 flex-1 min-w-0">
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.persons')}</label>
-                <select
-                  value={persons}
-                  onChange={e => setPersons(e.target.value)}
-                  className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
-                >
-                  {[1,2,3,4,5,6,7,8].map(n => (
-                    <option key={n} value={n} className="bg-[#0B1C10]">{n} {n === 1 ? 'person' : 'persons'}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Divider */}
-              <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-
-              {/* Time */}
-              <div className="flex flex-col gap-1 flex-1 min-w-0">
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.time')}</label>
-                <select
-                  value={time}
-                  onChange={e => setTime(e.target.value)}
-                  className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
-                >
-                  {['10:00','11:00','12:00','13:00','14:00','17:00','18:00','19:00','20:00','21:00'].map(t => (
-                    <option key={t} value={t} className="bg-[#0B1C10]">{t}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Divider */}
-              <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-
-              {/* Date */}
-              <div className="flex flex-col gap-1 flex-1 min-w-0">
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.date')}</label>
-                <input
-                  type="date"
-                  value={date}
-                  onChange={e => setDate(e.target.value)}
-                  className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 [color-scheme:dark]"
-                />
-              </div>
-
-              {/* Divider */}
-              <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
-
-              {/* CTA */}
-              <Button className="bg-[#A58A5C] text-[#0F1F15] hover:bg-[#D5B67A] font-serif rounded-none px-10 py-5 text-xs tracking-widest shrink-0">
-                {t('hero.bookNow')}
-              </Button>
+      {/* Booking Bar */}
+      <div className="bg-[#0B1C10] border-t border-[#A58A5C]/20">
+        <div className="container mx-auto px-6 lg:px-24 py-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-0">
+            <div className="text-xl font-serif text-[#A58A5C] md:w-48 shrink-0 text-center md:text-left">
+              {t('hero.bookNow')}
             </div>
+            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
+            <div className="flex flex-col gap-1 flex-1 min-w-0">
+              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.persons')}</label>
+              <select
+                value={persons}
+                onChange={e => setPersons(e.target.value)}
+                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
+              >
+                {[1,2,3,4,5,6,7,8].map(n => (
+                  <option key={n} value={n} className="bg-[#0B1C10]">{n} {n === 1 ? 'person' : 'persons'}</option>
+                ))}
+              </select>
+            </div>
+            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
+            <div className="flex flex-col gap-1 flex-1 min-w-0">
+              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.time')}</label>
+              <select
+                value={time}
+                onChange={e => setTime(e.target.value)}
+                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 cursor-pointer"
+              >
+                {['10:00','11:00','12:00','13:00','14:00','17:00','18:00','19:00','20:00','21:00'].map(h => (
+                  <option key={h} value={h} className="bg-[#0B1C10]">{h}</option>
+                ))}
+              </select>
+            </div>
+            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
+            <div className="flex flex-col gap-1 flex-1 min-w-0">
+              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-[#A58A5C]/70">{t('hero.date')}</label>
+              <input
+                type="date"
+                value={date}
+                onChange={e => setDate(e.target.value)}
+                className="bg-transparent text-[#F6EFDF] font-sans text-sm outline-none border-b border-[#A58A5C]/30 pb-1 [color-scheme:dark]"
+              />
+            </div>
+            <div className="hidden md:block h-10 w-[1px] bg-[#A58A5C]/20 mx-6" />
+            <Button className="bg-[#A58A5C] text-[#0F1F15] hover:bg-[#D5B67A] font-serif rounded-none px-10 py-5 text-xs tracking-widest shrink-0">
+              {t('hero.bookNow')}
+            </Button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* 2. Quality Specialties */}
       <section className="py-24 container mx-auto px-6 lg:px-24">
@@ -126,10 +76,10 @@ export default function Home() {
          <div className="flex flex-col lg:flex-row items-center gap-16">
            <div className="w-full lg:w-1/2 relative h-[500px]">
               <div className="absolute left-0 top-0 w-2/3 h-[400px] overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2670&auto=format&fit=crop" fill alt="Hana dish" className="object-cover" />
+                <Image src="/images/section-dish-1.jpg" fill alt="Hana dish" className="object-cover" sizes="33vw" />
               </div>
               <div className="absolute right-0 bottom-0 w-2/3 h-[360px] overflow-hidden border-4 border-background shadow-2xl z-10">
-                <Image src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=2670&auto=format&fit=crop" fill alt="Hana interior" className="object-cover" />
+                <Image src="/images/section-interior.jpg" fill alt="Hana interior" className="object-cover" sizes="33vw" />
               </div>
            </div>
            <div className="w-full lg:w-1/2 max-w-md">
@@ -147,7 +97,7 @@ export default function Home() {
 
       {/* 3. Full-width Banner */}
       <section className="relative h-[60vh] w-full">
-         <Image src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2670&auto=format&fit=crop" fill alt="Hana restaurant atmosphere" className="object-cover object-center" />
+         <Image src="/images/banner.jpg" fill alt="Hana restaurant atmosphere" className="object-cover object-center" sizes="100vw" />
          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white gap-6">
            <p className="text-xs tracking-[0.3em] font-sans uppercase opacity-80">Hana Restaurant</p>
            <h2 className="text-4xl md:text-6xl font-serif text-center max-w-3xl leading-tight px-6">Không gian bình yên giữa lòng thành phố</h2>
@@ -160,18 +110,15 @@ export default function Home() {
       {/* 4. Three Feature Pillars */}
       <section className="py-24 bg-[#FAF6EE]">
         <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          {['fresh', 'chef', 'quality'].map((key, idx) => (
+          {(['fresh', 'chef', 'quality'] as const).map((key, idx) => (
             <div key={key} className="flex flex-col items-center px-4">
               <div className="w-32 h-32 mb-8 rounded-full overflow-hidden relative ring-4 ring-[#A58A5C]/20">
                 <Image
-                  src={[
-                    'https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=684&auto=format&fit=crop',
-                    'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=800&auto=format&fit=crop',
-                    'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=800&auto=format&fit=crop',
-                  ][idx]}
+                  src={['/images/feature-fresh.jpg', '/images/feature-chef.jpg', '/images/feature-quality.jpg'][idx]}
                   fill
                   alt={key}
                   className="object-cover"
+                  sizes="128px"
                 />
               </div>
               <h4 className="text-lg font-serif mb-3 tracking-widest">{t(`features.${key}.title`)}</h4>
@@ -186,7 +133,7 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-24 flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 relative flex justify-center">
              <div className="w-[75%] aspect-[3/4] relative rounded-t-full overflow-hidden border-[12px] border-background shadow-2xl">
-               <Image src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2600&auto=format&fit=crop" fill alt="Menu Highlight" className="object-cover" />
+               <Image src="/images/menu-highlight.jpg" fill alt="Menu Highlight" className="object-cover" sizes="40vw" />
              </div>
              <div className="absolute bottom-4 right-8 w-28 h-28 bg-[#A58A5C] rounded-full flex items-center justify-center text-white text-[9px] tracking-[0.1em] font-sans text-center px-4 leading-snug shadow-xl border-4 border-background z-10">
                {t('menu.badge')}
@@ -195,9 +142,8 @@ export default function Home() {
           <div className="w-full lg:w-1/2">
              <span className="text-[#A58A5C] text-[10px] tracking-[0.2em] font-sans font-semibold uppercase mb-4 block">{t('menu.label')}</span>
              <h3 className="text-3xl font-serif text-foreground mb-12">{t('menu.title')}</h3>
-             
              <div className="space-y-6">
-               {MENU_ITEMS.map(({ key }) => (
+               {(['item1','item2','item3','item4'] as const).map((key) => (
                  <div key={key} className="flex items-start gap-4">
                    <div className="flex-grow min-w-0">
                      <h4 className="text-sm font-serif tracking-widest mb-1">{t(`menu.${key}.name`)}</h4>
@@ -224,10 +170,10 @@ export default function Home() {
            </div>
            <div className="w-full lg:w-1/2 flex justify-end relative h-[420px]">
               <div className="absolute left-0 top-0 w-[65%] h-full overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=800&auto=format&fit=crop" fill alt="Hana kitchen" className="object-cover" />
+                <Image src="/images/chef-kitchen.jpg" fill alt="Hana kitchen" className="object-cover" sizes="32vw" />
               </div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[280px] overflow-hidden border-8 border-[#FAF6EE] shadow-2xl z-10">
-                <Image src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop" fill alt="Hana dish close" className="object-cover" />
+                <Image src="/images/dish-close.jpg" fill alt="Hana dish close" className="object-cover" sizes="23vw" />
               </div>
            </div>
         </div>
@@ -236,14 +182,9 @@ export default function Home() {
       {/* 7. Image Collage */}
       <section className="bg-[#0F1F15] overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 h-[280px] md:h-[380px]">
-          {[
-            'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=800&auto=format&fit=crop',
-          ].map((src, i) => (
+          {['/images/gallery-1.jpg', '/images/gallery-2.jpg', '/images/gallery-3.jpg', '/images/gallery-4.jpg'].map((src, i) => (
             <div key={i} className="relative overflow-hidden group">
-              <Image src={src} fill alt={`gallery ${i}`} className="object-cover transition-transform duration-700 group-hover:scale-110" />
+              <Image src={src} fill alt={`gallery ${i+1}`} className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="25vw" />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
             </div>
           ))}
@@ -289,10 +230,7 @@ export default function Home() {
                {t('newsletter.desc')}
              </p>
           </div>
-          <form
-            className="w-full md:w-6/12 flex items-end gap-0"
-            onSubmit={e => e.preventDefault()}
-          >
+          <form className="w-full md:w-6/12 flex items-end gap-0" onSubmit={e => e.preventDefault()}>
              <div className="flex-1">
                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-foreground/50 block mb-2">Email</label>
                <input
