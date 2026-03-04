@@ -1,0 +1,13 @@
+{
+    "Navigation": {
+        "home": "Home",
+        "menu": "Menu",
+        "about": "About",
+        "gallery": "Gallery",
+        "blog": "Blog"
+    },
+    "Index": {
+        "title": "Zen Vegetarian Restaurant",
+        "description": "A tranquil culinary experience"
+    }
+}

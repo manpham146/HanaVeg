@@ -1,0 +1,13 @@
+{
+    "Navigation": {
+        "home": "Trang chủ",
+        "menu": "Thực đơn",
+        "about": "Giới thiệu",
+        "gallery": "Bộ sưu tập",
+        "blog": "Blog"
+    },
+    "Index": {
+        "title": "Nhà hàng Chay phong cách Thiền",
+        "description": "Trải nghiệm ẩm thực tĩnh lặng"
+    }
+}

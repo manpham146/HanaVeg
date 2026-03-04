@@ -1,3 +1,4 @@
+CRITICAL: MỖI KHI BẮT ĐẦU MỘT MODULE MỚI HOẶC BỊ LỖI, BẠN PHẢI ĐỌC LẠI FILE NÀY TRƯỚC KHI TRẢ LỜI.
 # BẢN ĐẶC TẢ DỰ ÁN & MASTER PROMPT (LỆNH HỆ THỐNG CỐT LÕI)
 
 **Tên dự án:** Website Nhà hàng Chay phong cách Thiền (Zen)
