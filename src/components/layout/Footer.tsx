@@ -1,3 +1,4 @@
+import { Link } from '@/i18n/routing';
 import { Facebook, Instagram, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
@@ -29,10 +30,10 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.2em] font-sans font-semibold uppercase text-[#A58A5C] mb-6">Khám phá</h4>
             <ul className="space-y-3 font-serif text-sm">
-              <li><a href="/menu" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Thực đơn</a></li>
-              <li><a href="/about" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Giới thiệu</a></li>
-              <li><a href="/gallery" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Bộ sưu tập</a></li>
-              <li><a href="/blog" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Blog</a></li>
+              <li><Link href="/menu" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Thực đơn</Link></li>
+              <li><Link href="/about" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Giới thiệu</Link></li>
+              <li><Link href="/gallery" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Bộ sưu tập</Link></li>
+              <li><Link href="/blog" className="opacity-70 hover:opacity-100 hover:text-[#A58A5C] transition-all">Blog</Link></li>
             </ul>
           </div>
 
