@@ -7,7 +7,39 @@
         "blog": "Blog"
     },
     "Index": {
-        "title": "Nhà hàng Chay phong cách Thiền",
-        "description": "Trải nghiệm ẩm thực tĩnh lặng"
+        "hero": {
+            "title": "Một không gian để thở, thưởng vị và kết nối",
+            "subtitle": "HanaVeg mang đến không chỉ bữa ăn mà còn là sự thăng hoa tinh tế trong từng khoảnh khắc",
+            "bookTable": "Đặt bàn ngay",
+            "viewMenu": "Xem thực đơn"
+        },
+        "intro": {
+            "title": "Khám phá thế giới chay tinh túy tại HanaVeg",
+            "description": "Trải nghiệm một chốn bình yên với ẩm thực thuần thực vật đầy tâm hồn, kết hợp hương vị truyền thống Việt Nam cùng nét hiện đại, trong không gian mộc mạc và ấm cúng ngay giữa lòng đô thị.",
+            "suggestMenu": "Gợi Ý Thực Đơn"
+        },
+        "testimonials": {
+            "title": "Đánh Giá Khách Hàng",
+            "subtitle": "Khám phá cảm nhận của thực khách về trải nghiệm tại HanaVeg.",
+            "review1": "HanaVeg thật sự là một chốn dừng chân lý tưởng! Không gian nhẹ nhàng, ấm cúng và ẩm thực mang đậm nét truyền thống.",
+            "review2": "Quán chay siêu chất. Món ăn ngon xuất sắc, hương vị khó quên!",
+            "review3": "Luôn tìm thấy sự bình yên khi thưởng thức các món ăn mang đậm tình yêu thiên nhiên tại đây."
+        },
+        "journey": {
+            "title": "Hành Trình Ẩm Thực Chay Thanh Tịnh",
+            "subtitle": "Tìm về một ốc đảo chay mộc mạc, nơi ẩm thực thuần thực vật lan toả sự tinh tế.",
+            "card1": {
+                "title": "Tinh hoa ẩm thực chay",
+                "desc": "Đắm mình trong hương vị truyền thống được sáng tạo theo phong cách hiện đại."
+            },
+            "card2": {
+                "title": "Góc nhìn ra thiên nhiên",
+                "desc": "Thả lỏng trong không gian xanh tươi, tĩnh lặng và ánh sáng dịu nhẹ."
+            },
+            "card3": {
+                "title": "Trải nghiệm đầy cảm hứng",
+                "desc": "Thưởng thức bữa ăn trong sự ấm áp thân quen và tiếng nhạc êm ả."
+            }
+        }
     }
 }

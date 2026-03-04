@@ -7,7 +7,39 @@
         "blog": "Blog"
     },
     "Index": {
-        "title": "Zen Vegetarian Restaurant",
-        "description": "A tranquil culinary experience"
+        "hero": {
+            "title": "A space to breathe, savor, and connect",
+            "subtitle": "HanaVeg brings not just a meal but exquisite elevation in every moment",
+            "bookTable": "Book a Table",
+            "viewMenu": "View Menu"
+        },
+        "intro": {
+            "title": "Discover the pure essence of vegetarian cuisine at HanaVeg",
+            "description": "Experience a peaceful haven with soulful plant-based cuisine, combining traditional Vietnamese flavors with a modern touch, in a rustic and cozy space right in the heart of the city.",
+            "suggestMenu": "Menu Suggestions"
+        },
+        "testimonials": {
+            "title": "Customer Reviews",
+            "subtitle": "Discover what our guests feel about their experience at HanaVeg.",
+            "review1": "HanaVeg is truly an ideal stop! A gentle, cozy space and food with traditional characteristics.",
+            "review2": "Super cool vegetarian restaurant. Excellent delicious food, unforgettable taste!",
+            "review3": "Always find peace when enjoying dishes full of love for nature here."
+        },
+        "journey": {
+            "title": "A Pure Vegetarian Culinary Journey",
+            "subtitle": "Return to a rustic vegetarian oasis, where plant-based food radiates sophistication.",
+            "card1": {
+                "title": "Quintessential vegetarian food",
+                "desc": "Immerse yourself in traditional flavors created in a modern style."
+            },
+            "card2": {
+                "title": "Nature-facing view",
+                "desc": "Relax in a lush, quiet space with soft light."
+            },
+            "card3": {
+                "title": "Inspiring experience",
+                "desc": "Enjoy your meal in familiar warmth and gentle music."
+            }
+        }
     }
 }
