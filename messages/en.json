@@ -8,50 +8,119 @@
     },
     "Index": {
         "hero": {
-            "title": "A space to breathe, savor, and connect",
-            "subtitle": "HanaVeg brings not just a meal but exquisite elevation in every moment",
+            "label": "Refined Vegetarian Dining",
+            "title": "Pure Flavors From Nature",
+            "subtitle": "Hana offers a world-class vegetarian dining experience, where every dish is a masterpiece crafted from the finest ingredients.",
             "bookTable": "Book a Table",
-            "viewMenu": "View Menu"
+            "viewMenu": "View Menu",
+            "persons": "Persons",
+            "time": "Time",
+            "date": "Date",
+            "bookNow": "Book Now"
         },
         "intro": {
-            "title": "Discover the pure essence of vegetarian cuisine at HanaVeg",
-            "description": "Experience a peaceful haven with soulful plant-based cuisine, combining traditional Vietnamese flavors with a modern touch, in a rustic and cozy space right in the heart of the city.",
-            "suggestMenu": "Menu Suggestions"
+            "label": "Our Expertise",
+            "title": "Refined Vegetarian Cuisine For Those Special Moments In Life",
+            "description": "At Hana, we believe plant-based cuisine can deliver a truly luxurious and emotional experience. Each ingredient is meticulously selected, each dish crafted with complete dedication — creating a genuine feast for the senses.",
+            "suggestMenu": "Explore The Menu"
+        },
+        "features": {
+            "fresh": {
+                "title": "Fresh Produce",
+                "desc": "Committed to using only hand-picked organic vegetables and herbs every day."
+            },
+            "chef": {
+                "title": "Skilled Chefs",
+                "desc": "Our cooks bring deep expertise and a true passion for plant-based art."
+            },
+            "quality": {
+                "title": "Best Quality",
+                "desc": "The highest standards in every step of preparation and presentation."
+            }
+        },
+        "menu": {
+            "label": "Special Offers",
+            "title": "Selected Menu",
+            "badge": "Quality Assured",
+            "item1": {
+                "name": "Premium Truffle Mushroom",
+                "desc": "Truffle mushrooms, fresh garlic, green herbs",
+                "price": "185,000"
+            },
+            "item2": {
+                "name": "Gourmet Fresh Rolls",
+                "desc": "Raw vegetables, rice noodles, organic hoisin",
+                "price": "95,000"
+            },
+            "item3": {
+                "name": "Japanese Miso Tofu",
+                "desc": "Silken tofu, miso sauce, seasonal greens",
+                "price": "120,000"
+            },
+            "item4": {
+                "name": "Golden Vegetable Curry",
+                "desc": "Sweet potato, lentils, Indian spices",
+                "price": "110,000"
+            }
+        },
+        "service": {
+            "title": "Our Excellent Service And Top Quality Dishes Are Unmatched. Pick The Best.",
+            "desc": "We know you want only the best for yourself. Come to Hana and discover true culinary art.",
+            "signature": "Hana Restaurant"
         },
         "testimonials": {
-            "title": "Customer Reviews",
-            "subtitle": "Discover what our guests feel about their experience at HanaVeg.",
-            "review1": "HanaVeg is truly an ideal stop! A gentle, cozy space and food with traditional characteristics.",
-            "review2": "Super cool vegetarian restaurant. Excellent delicious food, unforgettable taste!",
-            "review3": "Always find peace when enjoying dishes full of love for nature here."
+            "quote": "Hana is where I find true peace in every meal. The ambience is breathtaking, the food is incredible – an experience I will keep recommending to everyone I know.",
+            "author": "Minh Chau – Loyal Guest"
         },
-        "journey": {
-            "title": "A Pure Vegetarian Culinary Journey",
-            "subtitle": "Return to a rustic vegetarian oasis, where plant-based food radiates sophistication.",
-            "card1": {
-                "title": "Quintessential vegetarian food",
-                "desc": "Immerse yourself in traditional flavors created in a modern style."
+        "values": {
+            "v1": {
+                "icon": "🌿",
+                "title": "100% Organic",
+                "desc": "Certified organic\ningredients every day"
             },
-            "card2": {
-                "title": "Nature-facing view",
-                "desc": "Relax in a lush, quiet space with soft light."
+            "v2": {
+                "icon": "🏆",
+                "title": "Top 10 Saigon",
+                "desc": "Most loved vegetarian\nrestaurant 2024"
             },
-            "card3": {
-                "title": "Inspiring experience",
-                "desc": "Enjoy your meal in familiar warmth and gentle music."
+            "v3": {
+                "icon": "🌱",
+                "title": "Zero Waste",
+                "desc": "Committed to zero\nfood waste practices"
+            },
+            "v4": {
+                "icon": "♻️",
+                "title": "Eco Friendly",
+                "desc": "Sustainable packaging\nand eco tableware"
+            },
+            "v5": {
+                "icon": "❤️",
+                "title": "Made With Love",
+                "desc": "Cooked with heartfelt\ndedication always"
+            },
+            "v6": {
+                "icon": "🌸",
+                "title": "Zen Inspired",
+                "desc": "Space designed\nby Zen principles"
             }
+        },
+        "newsletter": {
+            "title": "Stay Up To Date",
+            "desc": "Subscribe to receive exclusive offers, new seasonal menus and special events from Hana.",
+            "placeholder": "Your email address",
+            "button": "Subscribe"
         }
     },
     "About": {
-        "title": "About HanaVeg",
+        "title": "About Hana",
         "subtitle": "A journey to tranquility through plant-based cuisine.",
         "philosophyTitle": "Zen Philosophy",
-        "philosophyText": "At HanaVeg, we believe every meal is a meditative experience. Food not only nourishes the body but also soothes the soul. Every ingredient is carefully selected to retain its inherent natural beauty.",
+        "philosophyText": "At Hana, we believe every meal is a meditative experience. Food not only nourishes the body but also soothes the soul. Every ingredient is carefully selected to retain its inherent natural beauty.",
         "passionTitle": "Love for Nature",
         "passionText": "Nature is an endless source of inspiration. From the spatial architecture to the food presentation, we always strive to recreate the rustic, tranquil beauty of plants and flowers in every moment you spend here."
     },
     "Gallery": {
         "title": "Gallery",
-        "subtitle": "Look at the peaceful moments and pure vegetarian dishes at HanaVeg."
+        "subtitle": "Explore the peaceful moments and pure vegetarian dishes at Hana."
     }
 }

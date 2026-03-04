@@ -8,50 +8,119 @@
     },
     "Index": {
         "hero": {
-            "title": "Một không gian để thở, thưởng vị và kết nối",
-            "subtitle": "HanaVeg mang đến không chỉ bữa ăn mà còn là sự thăng hoa tinh tế trong từng khoảnh khắc",
+            "label": "Nhà hàng chay tinh tế",
+            "title": "Hương vị thuần khiết từ thiên nhiên",
+            "subtitle": "Hana mang đến trải nghiệm ẩm thực chay đẳng cấp, nơi mỗi món ăn là một tác phẩm nghệ thuật từ những nguyên liệu tươi ngon nhất.",
             "bookTable": "Đặt bàn ngay",
-            "viewMenu": "Xem thực đơn"
+            "viewMenu": "Xem thực đơn",
+            "persons": "Số người",
+            "time": "Giờ đến",
+            "date": "Ngày đến",
+            "bookNow": "Đặt ngay"
         },
         "intro": {
-            "title": "Khám phá thế giới chay tinh túy tại HanaVeg",
-            "description": "Trải nghiệm một chốn bình yên với ẩm thực thuần thực vật đầy tâm hồn, kết hợp hương vị truyền thống Việt Nam cùng nét hiện đại, trong không gian mộc mạc và ấm cúng ngay giữa lòng đô thị.",
-            "suggestMenu": "Gợi Ý Thực Đơn"
+            "label": "Chuyên môn của chúng tôi",
+            "title": "Ẩm thực chay tinh tế dành cho những khoảnh khắc đặc biệt",
+            "description": "Tại Hana, chúng tôi tin rằng ẩm thực thuần thực vật có thể mang lại trải nghiệm xa xỉ và đầy cảm xúc. Từng nguyên liệu được tuyển chọn kỹ lưỡng, từng món ăn được chế biến với tất cả tấm lòng – tạo nên một bữa tiệc thực sự cho các giác quan.",
+            "suggestMenu": "Khám phá thực đơn"
+        },
+        "features": {
+            "fresh": {
+                "title": "Nguyên liệu tươi sạch",
+                "desc": "Cam kết chỉ dùng rau củ quả hữu cơ được chọn lọc từng ngày."
+            },
+            "chef": {
+                "title": "Đầu bếp tận tâm",
+                "desc": "Những người thợ nấu với kiến thức chuyên sâu và tình yêu ẩm thực."
+            },
+            "quality": {
+                "title": "Chất lượng đẳng cấp",
+                "desc": "Tiêu chuẩn cao nhất trong từng bước chế biến và trình bày."
+            }
+        },
+        "menu": {
+            "label": "Ưu đãi đặc biệt",
+            "title": "Thực đơn tiêu biểu",
+            "badge": "Chất lượng đảm bảo",
+            "item1": {
+                "name": "Nấm Truffle Hảo Hạng",
+                "desc": "Nấm truffle, tỏi tươi, thảo mộc xanh",
+                "price": "185.000"
+            },
+            "item2": {
+                "name": "Gỏi Cuốn Cao Cấp",
+                "desc": "Rau sống, bún gạo, tương hoisin hữu cơ",
+                "price": "95.000"
+            },
+            "item3": {
+                "name": "Đậu Hũ Miso Nhật",
+                "desc": "Đậu hũ non, sốt miso, rau cải xanh",
+                "price": "120.000"
+            },
+            "item4": {
+                "name": "Cà Ri Rau Củ Vàng",
+                "desc": "Khoai lang, đậu lăng, cà ri Ấn Độ",
+                "price": "110.000"
+            }
+        },
+        "service": {
+            "title": "Dịch vụ xuất sắc và món ăn đỉnh cao – lựa chọn hoàn hảo cho bạn.",
+            "desc": "Chúng tôi biết bạn chỉ muốn những điều tốt nhất. Hãy đến Hana và khám phá nghệ thuật ẩm thực thực sự.",
+            "signature": "Hana Restaurant"
         },
         "testimonials": {
-            "title": "Đánh Giá Khách Hàng",
-            "subtitle": "Khám phá cảm nhận của thực khách về trải nghiệm tại HanaVeg.",
-            "review1": "HanaVeg thật sự là một chốn dừng chân lý tưởng! Không gian nhẹ nhàng, ấm cúng và ẩm thực mang đậm nét truyền thống.",
-            "review2": "Quán chay siêu chất. Món ăn ngon xuất sắc, hương vị khó quên!",
-            "review3": "Luôn tìm thấy sự bình yên khi thưởng thức các món ăn mang đậm tình yêu thiên nhiên tại đây."
+            "quote": "Hana là nơi mà tôi tìm thấy sự bình yên thực sự trong từng bữa ăn. Không gian tuyệt vời, món ăn ngon không tưởng – một trải nghiệm mà tôi sẽ kể mãi cho bạn bè.",
+            "author": "Minh Châu – Khách hàng thân thiết"
         },
-        "journey": {
-            "title": "Hành Trình Ẩm Thực Chay Thanh Tịnh",
-            "subtitle": "Tìm về một ốc đảo chay mộc mạc, nơi ẩm thực thuần thực vật lan toả sự tinh tế.",
-            "card1": {
-                "title": "Tinh hoa ẩm thực chay",
-                "desc": "Đắm mình trong hương vị truyền thống được sáng tạo theo phong cách hiện đại."
+        "values": {
+            "v1": {
+                "icon": "🌿",
+                "title": "100% Organic",
+                "desc": "Nguyên liệu hữu cơ\ncó chứng nhận"
             },
-            "card2": {
-                "title": "Góc nhìn ra thiên nhiên",
-                "desc": "Thả lỏng trong không gian xanh tươi, tĩnh lặng và ánh sáng dịu nhẹ."
+            "v2": {
+                "icon": "🏆",
+                "title": "Top 10 Saigon",
+                "desc": "Nhà hàng chay được\nyêu thích nhất 2024"
             },
-            "card3": {
-                "title": "Trải nghiệm đầy cảm hứng",
-                "desc": "Thưởng thức bữa ăn trong sự ấm áp thân quen và tiếng nhạc êm ả."
+            "v3": {
+                "icon": "🌱",
+                "title": "Zero Waste",
+                "desc": "Cam kết không rác\nthải thực phẩm"
+            },
+            "v4": {
+                "icon": "♻️",
+                "title": "Eco Friendly",
+                "desc": "Bao bì & vật dụng\nân thân thiện môi trường"
+            },
+            "v5": {
+                "icon": "❤️",
+                "title": "Made With Love",
+                "desc": "Nấu bằng tâm huyết\nvà tình yêu thương"
+            },
+            "v6": {
+                "icon": "🌸",
+                "title": "Zen Inspired",
+                "desc": "Không gian thiết kế\ntheo triết lý thiền"
             }
+        },
+        "newsletter": {
+            "title": "Nhận tin tức mới nhất",
+            "desc": "Đăng ký để nhận những ưu đãi độc quyền, thực đơn mùa vụ mới và các sự kiện đặc biệt từ Hana.",
+            "placeholder": "Địa chỉ email của bạn",
+            "button": "Đăng ký"
         }
     },
     "About": {
-        "title": "Về HanaVeg",
+        "title": "Về Hana",
         "subtitle": "Hành trình tìm về sự tĩnh lặng qua ẩm thực thuần thực vật.",
         "philosophyTitle": "Triết Lý Thiền",
-        "philosophyText": "Tại HanaVeg, chúng tôi tin rằng mỗi bữa ăn là một trải nghiệm thiền định. Thức ăn không chỉ nuôi dưỡng cơ thể mà còn làm dịu tâm hồn. Mọi nguyên liệu đều được chọn lọc kỹ càng để giữ trọn vẻ đẹp tự nhiên vốn có.",
+        "philosophyText": "Tại Hana, chúng tôi tin rằng mỗi bữa ăn là một trải nghiệm thiền định. Thức ăn không chỉ nuôi dưỡng cơ thể mà còn làm dịu tâm hồn. Mọi nguyên liệu đều được chọn lọc kỹ càng để giữ trọn vẻ đẹp tự nhiên vốn có.",
         "passionTitle": "Tình Yêu Thiên Nhiên",
         "passionText": "Thiên nhiên là nguồn cảm hứng bất tận. Từ kiến trúc không gian đến cách bài trí món ăn, chúng tôi luôn nỗ lực tái hiện sự mộc mạc, tĩnh lặng của cỏ cây, hoa lá vào từng khoảnh khắc bạn hiện diện nơi đây."
     },
     "Gallery": {
         "title": "Bộ Sưu Tập",
-        "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại HanaVeg."
+        "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại Hana."
     }
 }
