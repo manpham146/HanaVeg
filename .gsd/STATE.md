@@ -1,21 +1,21 @@
 # STATE.md
 
-> **Current Context**: Hoàn thành thực thi **Phase 2: Core UI Components**.
+> **Current Context**: Hoàn thành tái cấu trúc giao diện trang chủ theo **Theme Blanquets (Phase 2.5)**.
 
 ## Current Position
 
-- **Phase**: 2 (completed)
-- **Task**: All tasks complete
+- **Phase**: 2.5 (completed)
+- **Task**: Redesign Home Page & Global Theme
 - **Status**: Verified
 
 ## Last Session Summary
 
-Phase 2 executed successfully. 3 plans, 3 tasks completed. Các UI tĩnh đã được xây dựng, bao gồm Header/Footer, Trang chủ (Home), Giới thiệu (About), Bộ sưu tập (Gallery), cập nhật tệp Localization và cấu hình tích hợp. Đã vượt qua khâu kiểm tra Verification.
+Phase 2.5 executed successfully. Hệ thống màu sắc (Dark green, Cream, Gold), Font chữ (Playfair Display, Jost) đã được cập nhật thành công qua `globals.css` và `layout.tsx`. Cấu trúc của Layout Header/Footer và UI Trang Chủ được code mô phỏng lại 100% cấu trúc cung cấp (trên nền thư viện Shadcn/Tailwind tương thích Next.js 15). Khâu deploy build/lint verification đã pass trơn tru.
 
 ## Important Information
 
 - Yêu cầu cấu trúc: Next.js + SCSS/Tailwind + Supabase.
-- Phong cách: Xanh ngọc bích, Hoa sen, thanh tịnh.
+- Phong cách: Xanh ngọc tối (Dark green), Nền sáng kem, chữ gold, bố cục cổ điển, tinh tế.
 
 ## Blockers / Unresolved Questions
 

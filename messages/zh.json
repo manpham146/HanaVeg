@@ -41,5 +41,17 @@
                 "desc": "在熟悉的温暖和轻柔的音乐中享受您的餐点。"
             }
         }
+    },
+    "About": {
+        "title": "关于 HanaVeg",
+        "subtitle": "通过植物性美食寻找宁静的旅程。",
+        "philosophyTitle": "禅宗哲学",
+        "philosophyText": "在 HanaVeg，我们相信每一顿饭都是一次冥想体验。食物不仅滋养身体，更能抚慰心灵。每一样食材都经过精心挑选，以保留其固有的自然之美。",
+        "passionTitle": "热爱自然",
+        "passionText": "自然是无尽的灵感之源。从空间建筑到食物摆盘，我们始终努力在您度过的每一刻，重现植物和花卉质朴、宁静的美。"
+    },
+    "Gallery": {
+        "title": "画廊",
+        "subtitle": "观看 HanaVeg 的宁静时刻和纯素菜肴。"
     }
 }

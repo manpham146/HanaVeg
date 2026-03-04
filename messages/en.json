@@ -41,5 +41,17 @@
                 "desc": "Enjoy your meal in familiar warmth and gentle music."
             }
         }
+    },
+    "About": {
+        "title": "About HanaVeg",
+        "subtitle": "A journey to tranquility through plant-based cuisine.",
+        "philosophyTitle": "Zen Philosophy",
+        "philosophyText": "At HanaVeg, we believe every meal is a meditative experience. Food not only nourishes the body but also soothes the soul. Every ingredient is carefully selected to retain its inherent natural beauty.",
+        "passionTitle": "Love for Nature",
+        "passionText": "Nature is an endless source of inspiration. From the spatial architecture to the food presentation, we always strive to recreate the rustic, tranquil beauty of plants and flowers in every moment you spend here."
+    },
+    "Gallery": {
+        "title": "Gallery",
+        "subtitle": "Look at the peaceful moments and pure vegetarian dishes at HanaVeg."
     }
 }

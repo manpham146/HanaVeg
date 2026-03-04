@@ -1,44 +1,43 @@
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-muted/30 pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <span className="text-2xl font-bold text-primary mb-4">HanaVeg</span>
-            <p className="text-sm text-muted-foreground max-w-sm">
-              Một không gian để thở, thưởng vị và kết nối. Lan tỏa sự bình yên qua từng món chay thanh tịnh.
-            </p>
-          </div>
-          
-          <div className="flex flex-col gap-4 text-sm text-muted-foreground items-center md:items-start">
-            <h3 className="font-semibold text-foreground text-base">Liên hệ</h3>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" />
-              <span>123 Đường Tĩnh Lặng, Quận 1, TP. HCM</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-primary" />
-              <span>0123 456 789</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
-              <span>10:00 - 22:00 (Thứ 3 - Chủ Nhật)</span>
-            </div>
-          </div>
-          
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="font-semibold text-foreground text-base mb-4">Chính sách</h3>
-            <ul className="text-sm text-muted-foreground flex flex-col gap-2 text-center md:text-left">
-              <li><a href="#" className="hover:text-primary transition-colors">Điều khoản dịch vụ</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Chính sách bảo mật</a></li>
-            </ul>
-          </div>
-        </div>
+    <footer className="bg-[#0F1F15] text-[#F6EFDF] pt-24 pb-12 border-t border-[#233A2B]">
+      <div className="container mx-auto px-4 flex flex-col items-center text-center">
         
-        <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} HanaVeg. All rights reserved.</p>
+        {/* Logo */}
+        <div className="mb-6 flex flex-col items-center">
+           <div className="w-12 h-12 bg-[#A58A5C] rounded-full mb-4 flex items-center justify-center">
+             <div className="w-8 h-8 rounded-full border border-[#0F1F15]"></div>
+           </div>
+           <span className="text-4xl font-serif text-[#A58A5C] mb-2">Blanquets</span>
+           <p className="text-sm opacity-70 max-w-md mt-2 font-sans tracking-wide leading-relaxed">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+           </p>
+        </div>
+
+        {/* Minimal Navigation */}
+        <div className="flex flex-wrap justify-center gap-8 mb-12 font-serif text-sm tracking-widest text-[#A58A5C]">
+          <a href="#" className="hover:text-[#F6EFDF] transition-colors">SERVICES</a>
+          <a href="#" className="hover:text-[#F6EFDF] transition-colors">CONTACT</a>
+          <a href="#" className="hover:text-[#F6EFDF] transition-colors">GIFT VOUCHERS</a>
+        </div>
+
+        {/* Divider */}
+        <div className="w-full max-w-4xl h-[1px] bg-[#233A2B] mb-8"></div>
+        
+        {/* Bottom bar */}
+        <div className="w-full max-w-4xl flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans tracking-wide opacity-60">
+          <p>&copy; {new Date().getFullYear()} Blanquets Restaurant.</p>
+          
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
+             <a href="#" className="hover:text-[#A58A5C] transition-colors"><Facebook className="w-4 h-4"/></a>
+             <a href="#" className="hover:text-[#A58A5C] transition-colors"><Instagram className="w-4 h-4"/></a>
+             <a href="#" className="hover:text-[#A58A5C] transition-colors"><Twitter className="w-4 h-4"/></a>
+          </div>
+
+          <p>Powered by Antigravity</p>
         </div>
       </div>
     </footer>

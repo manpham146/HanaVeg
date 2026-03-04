@@ -41,5 +41,17 @@
                 "desc": "Thưởng thức bữa ăn trong sự ấm áp thân quen và tiếng nhạc êm ả."
             }
         }
+    },
+    "About": {
+        "title": "Về HanaVeg",
+        "subtitle": "Hành trình tìm về sự tĩnh lặng qua ẩm thực thuần thực vật.",
+        "philosophyTitle": "Triết Lý Thiền",
+        "philosophyText": "Tại HanaVeg, chúng tôi tin rằng mỗi bữa ăn là một trải nghiệm thiền định. Thức ăn không chỉ nuôi dưỡng cơ thể mà còn làm dịu tâm hồn. Mọi nguyên liệu đều được chọn lọc kỹ càng để giữ trọn vẻ đẹp tự nhiên vốn có.",
+        "passionTitle": "Tình Yêu Thiên Nhiên",
+        "passionText": "Thiên nhiên là nguồn cảm hứng bất tận. Từ kiến trúc không gian đến cách bài trí món ăn, chúng tôi luôn nỗ lực tái hiện sự mộc mạc, tĩnh lặng của cỏ cây, hoa lá vào từng khoảnh khắc bạn hiện diện nơi đây."
+    },
+    "Gallery": {
+        "title": "Bộ Sưu Tập",
+        "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại HanaVeg."
     }
 }
