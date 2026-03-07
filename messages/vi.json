@@ -1,4 +1,38 @@
 {
+    "Metadata": {
+        "title": "HanaVeg - Nhà hàng Chay phong cách Thiền",
+        "description": "Trải nghiệm ẩm thực tĩnh lặng"
+    },
+    "Common": {
+        "brandName": "Hana",
+        "brandSub": "Restaurant",
+        "phone": "0901 234 567",
+        "email": "Email",
+        "person": "người",
+        "persons": "người"
+    },
+    "HeroSwiper": {
+        "slides": [
+            {
+                "label": "AMBIENT",
+                "title": "Tinh Hoa",
+                "titleAccent": "ẨM THỰC CHAY",
+                "desc": "Trải nghiệm ẩm thực thuần thực vật với cách chế biến tinh tế, từng nguyên liệu được chọn lọc kỹ lưỡng."
+            },
+            {
+                "label": "SIGNATURE",
+                "title": "Không Gian",
+                "titleAccent": "BÌNH YÊN",
+                "desc": "Hana được thiết kế như một ốc đảo xanh mát giữa lòng đô thị, nơi bạn hoàn toàn thư giãn."
+            },
+            {
+                "label": "FRESH",
+                "title": "Nguyên Liệu",
+                "titleAccent": "THUẦN KHIẾT",
+                "desc": "Cam kết 100% hữu cơ — rau củ quả tươi ngon được thu hoạch và chế biến trong ngày."
+            }
+        ]
+    },
     "Navigation": {
         "home": "Trang chủ",
         "menu": "Thực đơn",
@@ -123,6 +157,21 @@
     "Gallery": {
         "title": "Bộ Sưu Tập",
         "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại Hana."
+    },
+    "Footer": {
+        "brandDesc": "Không gian ẩm thực chay tinh tế, nơi mỗi bữa ăn trở thành một hành trình cảm xúc.",
+        "explore": "Khám phá",
+        "contact": "Liên hệ",
+        "menuLink": "Thực đơn",
+        "aboutLink": "Giới thiệu",
+        "galleryLink": "Bộ sưu tập",
+        "blogLink": "Blog",
+        "address": "123 Đường Lê Thánh Tôn, Quận 1, TP. Hồ Chí Minh",
+        "weekday": "Thứ 2 – Thứ 6: 10:00 – 22:00",
+        "weekend": "Thứ 7 – Chủ nhật: 09:00 – 23:00",
+        "copyright": "© {year} Hana Restaurant. Bảo lưu mọi quyền.",
+        "privacy": "Chính sách bảo mật",
+        "terms": "Điều khoản sử dụng"
     },
     "Booking": {
         "label": "Đặt chỗ trước",

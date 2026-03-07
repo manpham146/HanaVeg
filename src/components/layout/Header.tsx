@@ -1,51 +1,103 @@
+'use client';
+
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
-import { Phone } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const t = useTranslations('Navigation');
+  const c = useTranslations('Common');
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { href: '/' as const, label: t('home') },
+    { href: '/menu' as const, label: t('menu') },
+    { href: '/about' as const, label: t('about') },
+    { href: '/gallery' as const, label: t('gallery') },
+    { href: '/blog' as const, label: t('blog') },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0F1F15] text-[#F6EFDF] border-b border-[#233A2B]">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6">
-        
-        {/* Left Side: Desktop Nav */}
+    <header className="sticky top-0 z-50 w-full bg-primary text-background border-b border-border-dark">
+      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+
+        {/* Left: Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-serif text-sm tracking-widest">
-          <Link href="/" className="hover:text-[#A58A5C] transition-colors">{t('home').toUpperCase()}</Link>
-          <Link href="/menu" className="hover:text-[#A58A5C] transition-colors">{t('menu').toUpperCase()}</Link>
-          <Link href="/about" className="hover:text-[#A58A5C] transition-colors">{t('about').toUpperCase()}</Link>
+          <Link href="/" className="hover:text-secondary transition-colors">{t('home').toUpperCase()}</Link>
+          <Link href="/menu" className="hover:text-secondary transition-colors">{t('menu').toUpperCase()}</Link>
+          <Link href="/about" className="hover:text-secondary transition-colors">{t('about').toUpperCase()}</Link>
         </nav>
 
+        {/* Mobile: Hamburger button */}
+        <button
+          className="lg:hidden p-2 -ml-2 text-background/80 hover:text-secondary transition-colors"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
         {/* Center: Logo */}
-        <Link href="/" className="flex flex-col items-center justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-          <span className="text-3xl font-serif text-[#A58A5C]">Hana</span>
-          <span className="text-[10px] tracking-[0.2em] font-sans uppercase opacity-70">Restaurant</span>
+        <Link href="/" className="flex items-center justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <Image src="/images/logo-transparent.png" alt="Hana Vegetarian" width={120} height={120} className="h-10 md:h-14 w-auto" priority />
         </Link>
-        
-        {/* Right Side: Other Nav & Actions */}
-        <div className="flex items-center gap-6">
+
+        {/* Right: Actions */}
+        <div className="flex items-center gap-3 md:gap-6">
           <nav className="hidden lg:flex items-center gap-8 font-serif text-sm tracking-widest mr-4">
-             <Link href="/gallery" className="hover:text-[#A58A5C] transition-colors">{t('gallery').toUpperCase()}</Link>
-             <Link href="/blog" className="hover:text-[#A58A5C] transition-colors">{t('blog').toUpperCase()}</Link>
+            <Link href="/gallery" className="hover:text-secondary transition-colors">{t('gallery').toUpperCase()}</Link>
+            <Link href="/blog" className="hover:text-secondary transition-colors">{t('blog').toUpperCase()}</Link>
           </nav>
 
-          {/* Hotline */}
-          <a href="tel:+84901234567" className="hidden sm:flex items-center gap-2 text-[#F6EFDF]/70 hover:text-[#A58A5C] transition-colors font-sans text-sm tracking-wider">
+          <a href={`tel:+84${c('phone').replace(/\s/g, '')}`} className="hidden sm:flex items-center gap-2 text-background/70 hover:text-secondary transition-colors font-sans text-sm tracking-wider">
             <Phone className="h-4 w-4" />
-            <span className="hidden md:inline">0901 234 567</span>
+            <span className="hidden md:inline">{c('phone')}</span>
           </a>
 
           <LanguageSwitcher />
 
-          {/* Book a Table button */}
           <Link
             href="/booking"
-            className="hidden md:inline-flex bg-[#A58A5C] text-[#0F1F15] hover:bg-[#D5B67A] font-serif rounded-none px-6 py-2.5 text-xs tracking-widest transition-colors items-center"
+            className="hidden md:inline-flex bg-secondary text-primary hover:bg-gold-hover font-serif rounded-none px-6 py-2.5 text-xs tracking-widest transition-colors items-center"
           >
             {t('booking').toUpperCase()}
           </Link>
         </div>
       </div>
+
+      {/* Mobile slide-down menu */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-primary border-t border-border-dark animate-in slide-in-from-top duration-200">
+          <nav className="flex flex-col px-6 py-4 gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="py-3 font-serif text-sm tracking-widest text-background/80 hover:text-secondary transition-colors border-b border-border-dark/30 last:border-0"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label.toUpperCase()}
+              </Link>
+            ))}
+            {/* Mobile Book a Table */}
+            <Link
+              href="/booking"
+              className="mt-4 mb-2 bg-secondary text-primary font-serif text-center py-3 text-xs tracking-widest hover:bg-gold-hover transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t('booking').toUpperCase()}
+            </Link>
+            {/* Mobile phone */}
+            <a href={`tel:+84${c('phone').replace(/\s/g, '')}`} className="flex items-center justify-center gap-2 py-3 text-background/60 font-sans text-sm">
+              <Phone className="h-4 w-4" />
+              {c('phone')}
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

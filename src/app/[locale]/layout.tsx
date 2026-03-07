@@ -7,16 +7,22 @@ import '@fontsource/jost/500.css';
 import '@fontsource/jost/600.css';
 import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-export const metadata: Metadata = {
-  title: 'HanaVeg - Nhà hàng Chay phong cách Thiền',
-  description: 'Trải nghiệm ẩm thực tĩnh lặng',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
 export default async function RootLayout({
   children,

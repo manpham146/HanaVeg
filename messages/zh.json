@@ -1,4 +1,38 @@
 {
+    "Metadata": {
+        "title": "HanaVeg - 禅意素食餐厅",
+        "description": "宁静的美食体验"
+    },
+    "Common": {
+        "brandName": "Hana",
+        "brandSub": "Restaurant",
+        "phone": "0901 234 567",
+        "email": "电子邮件",
+        "person": "位",
+        "persons": "位"
+    },
+    "HeroSwiper": {
+        "slides": [
+            {
+                "label": "氛围",
+                "title": "精华",
+                "titleAccent": "素食美食",
+                "desc": "体验纯植物美食与精致烹饪，每一种食材都经过精心挑选。"
+            },
+            {
+                "label": "特色",
+                "title": "宁静",
+                "titleAccent": "空间",
+                "desc": "Hana 被设计为城市中心的绿色绿洲，让您完全放松。"
+            },
+            {
+                "label": "新鲜",
+                "title": "纯净",
+                "titleAccent": "食材",
+                "desc": "承诺100%有机——新鲜蔬菜每日采摘并烹制。"
+            }
+        ]
+    },
     "Navigation": {
         "home": "首页",
         "menu": "菜单",
@@ -123,6 +157,21 @@
     "Gallery": {
         "title": "画廊",
         "subtitle": "探索 Hana 的宁静时刻和纯素菜肴。"
+    },
+    "Footer": {
+        "brandDesc": "精致素食空间，让每一顿饭都成为一次情感之旅。",
+        "explore": "探索",
+        "contact": "联系方式",
+        "menuLink": "菜单",
+        "aboutLink": "关于我们",
+        "galleryLink": "画廊",
+        "blogLink": "博客",
+        "address": "胡志明市第一郡黎圣尊路123号",
+        "weekday": "周一至周五: 10:00 – 22:00",
+        "weekend": "周六周日: 09:00 – 23:00",
+        "copyright": "© {year} Hana Restaurant. 版权所有。",
+        "privacy": "隐私政策",
+        "terms": "使用条款"
     },
     "Booking": {
         "label": "提前预订",

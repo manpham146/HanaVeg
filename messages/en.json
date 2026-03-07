@@ -1,4 +1,38 @@
 {
+    "Metadata": {
+        "title": "HanaVeg - Zen-style Vegetarian Restaurant",
+        "description": "A tranquil dining experience"
+    },
+    "Common": {
+        "brandName": "Hana",
+        "brandSub": "Restaurant",
+        "phone": "0901 234 567",
+        "email": "Email",
+        "person": "person",
+        "persons": "persons"
+    },
+    "HeroSwiper": {
+        "slides": [
+            {
+                "label": "AMBIENT",
+                "title": "The Essence of",
+                "titleAccent": "PLANT-BASED CUISINE",
+                "desc": "Experience pure plant-based cuisine with refined preparation, every ingredient carefully selected."
+            },
+            {
+                "label": "SIGNATURE",
+                "title": "A Space of",
+                "titleAccent": "TRANQUILITY",
+                "desc": "Hana is designed as a green oasis in the heart of the city, where you can fully relax."
+            },
+            {
+                "label": "FRESH",
+                "title": "Ingredients of",
+                "titleAccent": "PURE NATURE",
+                "desc": "Committed to 100% organic — fresh vegetables harvested and prepared daily."
+            }
+        ]
+    },
     "Navigation": {
         "home": "Home",
         "menu": "Menu",
@@ -123,6 +157,21 @@
     "Gallery": {
         "title": "Gallery",
         "subtitle": "Explore the peaceful moments and pure vegetarian dishes at Hana."
+    },
+    "Footer": {
+        "brandDesc": "A refined vegetarian dining space where every meal becomes an emotional journey.",
+        "explore": "Explore",
+        "contact": "Contact",
+        "menuLink": "Menu",
+        "aboutLink": "About",
+        "galleryLink": "Gallery",
+        "blogLink": "Blog",
+        "address": "123 Le Thanh Ton St, District 1, Ho Chi Minh City",
+        "weekday": "Mon – Fri: 10:00 AM – 10:00 PM",
+        "weekend": "Sat – Sun: 9:00 AM – 11:00 PM",
+        "copyright": "© {year} Hana Restaurant. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
     },
     "Booking": {
         "label": "Reserve in Advance",
