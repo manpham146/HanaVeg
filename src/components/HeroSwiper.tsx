@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Button } from '@/components/ui/button';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
@@ -16,26 +17,28 @@ export default function HeroSwiper() {
 
   return (
     <div className="relative w-full bg-primary overflow-hidden" style={{ height: 'calc(100vh - 80px)', minHeight: '500px' }}>
-      <button
+      <Button
         id="hero-prev"
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 text-secondary/60 hover:text-secondary transition-all"
+        variant="ghost-nav"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 text-secondary/60 hover:text-secondary hover:bg-transparent px-0"
         aria-label="Previous slide"
       >
         <svg width="40" height="14" viewBox="0 0 40 14" fill="none">
           <line x1="40" y1="7" x2="0" y2="7" stroke="currentColor" strokeWidth="1"/>
           <polyline points="8,1 0,7 8,13" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/>
         </svg>
-      </button>
-      <button
+      </Button>
+      <Button
         id="hero-next"
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 text-secondary/60 hover:text-secondary transition-all"
+        variant="ghost-nav"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 text-secondary/60 hover:text-secondary hover:bg-transparent px-0"
         aria-label="Next slide"
       >
         <svg width="40" height="14" viewBox="0 0 40 14" fill="none">
           <line x1="0" y1="7" x2="40" y2="7" stroke="currentColor" strokeWidth="1"/>
           <polyline points="32,1 40,7 32,13" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/>
         </svg>
-      </button>
+      </Button>
 
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}

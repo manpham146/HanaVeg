@@ -1,25 +1,27 @@
 # STATE.md
 
-> **Current Context**: Hoàn thành tái cấu trúc giao diện trang chủ theo **Theme Blanquets (Phase 2.5)**.
+> **Current Context**: Phase 1 & 2 hoàn tất. Sẵn sàng bắt đầu Phase 3 (Dynamic Content).
 
 ## Current Position
 
-- **Phase**: 2.5 (completed)
-- **Task**: Redesign Home Page & Global Theme
-- **Status**: Verified
+- **Phase**: 2 (completed) — sẵn sàng Phase 3
+- **Task**: N/A — chờ khởi tạo plan Phase 3
+- **Status**: Idle
 
 ## Last Session Summary
 
-Phase 2.5 executed successfully. Hệ thống màu sắc (Dark green, Cream, Gold), Font chữ (Playfair Display, Jost) đã được cập nhật thành công qua `globals.css` và `layout.tsx`. Cấu trúc của Layout Header/Footer và UI Trang Chủ được code mô phỏng lại 100% cấu trúc cung cấp (trên nền thư viện Shadcn/Tailwind tương thích Next.js 15). Khâu deploy build/lint verification đã pass trơn tru.
+Cập nhật SPEC, ROADMAP, STATE cho đồng bộ hiện trạng thực tế: thêm trang Booking vào Goals, cập nhật Non-Goals, đánh dấu Phase 1 ✅ Complete, ghi nhận Booking page trong Phase 2.
 
 ## Important Information
 
-- Yêu cầu cấu trúc: Next.js + SCSS/Tailwind + Supabase.
-- Phong cách: Xanh ngọc tối (Dark green), Nền sáng kem, chữ gold, bố cục cổ điển, tinh tế.
+- **Stack**: Next.js 15 + Tailwind + Shadcn UI + Supabase + next-intl + Zustand
+- **i18n**: Đã chọn `next-intl` — 3 ngôn ngữ (VI, EN, ZH) hoạt động.
+- **Theme**: Dark green / Cream / Gold — Playfair Display + Jost.
+- **Trang đã xong**: Home, About, Gallery, Booking (form gửi yêu cầu).
 
 ## Blockers / Unresolved Questions
 
-- Cần quyết định thư viện i18n phù hợp nhất với Next.js App Router (ví dụ `next-intl` hoặc `react-i18next`).
+- _(Không có blocker nào hiện tại)_
 
 ## Next Steps
 

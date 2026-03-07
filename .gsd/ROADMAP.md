@@ -14,14 +14,14 @@
 
 ### Phase 1: Foundation (Khởi tạo Nền tảng)
 
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Objective**: Setup Next.js, cấu hình Tailwind/Shadcn, cấu hình đa ngôn ngữ (i18n), kết nối Supabase, xây dựng Layout tổng thể (Header, Footer).
 **Requirements**: REQ-01, REQ-02
 
 ### Phase 2: Core UI Components (Giao diện Cốt lõi)
 
 **Status**: ✅ Complete
-**Objective**: Phát triển các UI components dùng chung (Button, Card, Typography), trang chủ (Home), trang Giới thiệu (About), Bộ sưu tập (Gallery) theo phong cách Zen.
+**Objective**: Phát triển các UI components dùng chung (Button, Card, Typography), trang chủ (Home), trang Giới thiệu (About), Bộ sưu tập (Gallery), trang Đặt bàn (Booking) theo phong cách Zen.
 **Requirements**: REQ-03, REQ-05
 
 ### Phase 3: Dynamic Content (Menu & Blog)

@@ -7,7 +7,7 @@
 
 - **Global Theme (`globals.css`)**
   - Đổi màu Background (Kem: `#F6EFDF`) và Foreground (`#0B1C10`).
-  - Đổi màu Primary (Xanh đậm: `#0F1F15`) và Secondary (Nâu nhạt/Gold: `#A58A5C`).
+  - Đổi màu Primary (Xanh đậm: `#0F1F15`) và Secondary (Nâu nhạt/Gold: `#D4B274`).
 - **Typography (`layout.tsx`, `globals.css`)**
   - Cài đặt và sử dụng font `Playfair Display` cho Heading.
   - Sử dụng font `Jost` cho Body.

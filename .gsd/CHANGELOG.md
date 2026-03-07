@@ -4,6 +4,17 @@
 
 ---
 
+## [2026-03-07] — Fix Language Switcher & Sync GSD Docs
+
+### Sửa đổi
+
+- `LanguageSwitcher.tsx` — Thêm `text-inherit [&_svg]:text-inherit` vào SelectTrigger để chữ ngôn ngữ (VI/EN/ZH) hiển thị đúng màu kem trên header dark; trước đó bị ẩn do kế thừa `text-foreground` (màu tối)
+- `.gsd/SPEC.md` — Goals thêm trang Đặt bàn; Non-Goals sửa rõ scope Booking
+- `.gsd/ROADMAP.md` — Phase 1 → ✅ Complete; Phase 2 thêm Booking vào Objective
+- `.gsd/STATE.md` — Rewrite phản ánh hiện trạng thực tế, xoá blocker i18n cũ
+
+---
+
 ## [2026-03-07] — Fix Kiến trúc theo Đặc tả
 
 ### Thêm mới
@@ -49,3 +60,4 @@
 - `HeroSwiper.tsx` — Giảm font heading: title text-2xl, accent text-3xl trên mobile (từ text-3xl/text-5xl)
 - `page.tsx` (Home) — Specialties images h-300 + w-3/4 trên mobile; banner heading text-2xl; testimonial quote text-lg; padding giảm
 - `.gsd/SPEC.md`, `CLAUDE.md` — Thêm nguyên tắc #6 Responsive Mobile-First và #7 i18n
+- Refactored UI: Bootstrapped `Input`, `Textarea`, `Select`, `Label` using shadcn-ui and customized `Button` variants (zen, ghost-nav) to migrate 10+ raw HTML fields to a standard modular design system across all pages.

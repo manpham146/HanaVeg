@@ -2,7 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
-import { ChangeEvent, useTransition } from 'react';
+import { useTransition } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -10,23 +11,22 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value;
+  const handleLanguageChange = (value: string) => {
     startTransition(() => {
-      router.replace({ pathname }, { locale: newLocale });
+      router.replace({ pathname }, { locale: value });
     });
   };
 
   return (
-    <select
-      value={locale}
-      onChange={handleLanguageChange}
-      disabled={isPending}
-      className="bg-transparent text-sm font-medium focus:outline-none cursor-pointer disabled:opacity-50"
-    >
-      <option value="vi">VI</option>
-      <option value="en">EN</option>
-      <option value="zh">ZH</option>
-    </select>
+    <Select value={locale} onValueChange={handleLanguageChange} disabled={isPending}>
+      <SelectTrigger className="w-auto h-auto px-2 py-1 bg-transparent border-0 shadow-none font-medium outline-none focus:ring-0 focus:outline-none disabled:opacity-50 text-inherit [&_svg]:text-inherit">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="vi">VI</SelectItem>
+        <SelectItem value="en">EN</SelectItem>
+        <SelectItem value="zh">ZH</SelectItem>
+      </SelectContent>
+    </Select>
   );
 }

@@ -8,7 +8,7 @@ Xây dựng một website Nhà hàng Chay phong cách Thiền (Zen) mang lại c
 
 ## Goals
 
-1. Cung cấp trải nghiệm Frontend xuất sắc, mượt mà chuẩn 60fps với các trang: Trang chủ, Menu, Giới thiệu, Bộ sưu tập, Blog.
+1. Cung cấp trải nghiệm Frontend xuất sắc, mượt mà chuẩn 60fps với các trang: Trang chủ, Menu, Giới thiệu, Bộ sưu tập, Blog, Đặt bàn.
 2. Hỗ trợ đa ngôn ngữ (Tiếng Việt, Tiếng Anh, Tiếng Trung Quốc).
 3. Footer có thông tin liên hệ và Header có tích hợp các liên kết mạng xã hội.
 4. Xây dựng trang Quản trị (Admin Panel) bằng Supabase cho phép phân quyền: Admin (sửa Menu, quản lý nhân viên) và Staff (chỉ xem, cập nhật đơn hàng/đặt bàn - phục vụ cho tính năng tương lai).
@@ -16,7 +16,7 @@ Xây dựng một website Nhà hàng Chay phong cách Thiền (Zen) mang lại c
 
 ## Non-Goals (Out of Scope for v1.0)
 
-- Hệ thống đặt bàn (Booking) hoàn chỉnh ở phía khách hàng.
+- Hệ thống quản lý đặt bàn hoàn chỉnh (admin xác nhận, lịch, thông báo). Trang Đặt bàn cơ bản (form gửi yêu cầu) đã có trong v1.
 - Thanh toán online (Online Payment).
 - Đặt đồ ăn giao tận nơi (Delivery).
 - Hệ thống thông báo theo thời gian thực cho yêu cầu đặt hàng/đặt bàn (Sẽ được mở rộng ở các phiên bản sau).
@@ -42,7 +42,26 @@ Xây dựng một website Nhà hàng Chay phong cách Thiền (Zen) mang lại c
 
 - **Chia để trị:** Tất cả thành phần giao diện PHẢI được tách thành Component độc lập, có thể tái sử dụng.
 - **Tính linh hoạt:** Mỗi component (ví dụ: Nút Đặt Bàn, Card Món Ăn) phải có thể gắn vào bất kỳ trang nào mà không cần viết lại mã.
-- **Ưu tiên Shadcn UI:** Khi thiết kế component mới, **PHẢI** kiểm tra thư viện [Shadcn UI](https://ui.shadcn.com) trước. Nếu đã có component phù hợp thì sử dụng và tuỳ chỉnh, chỉ tự xây dựng từ đầu khi Shadcn không đáp ứng được yêu cầu.
+
+#### Quy tắc Reuse-First — BẮT BUỘC
+
+Trước mỗi UI element, Agent/Developer **PHẢI** làm theo thứ tự:
+
+1. **Kiểm tra `src/components/ui/`** → Có component rồi → **DÙNG LẠI** (thêm variant/className nếu cần)
+2. **Chưa có** → Kiểm tra [Shadcn UI](https://ui.shadcn.com) → `npx shadcn@latest add <component>`
+3. **Shadcn không đáp ứng** → Tự build mới trong `src/components/ui/` dùng `cva + Radix UI`
+
+> **NGHIÊM CẤM** raw HTML `<button>`, `<input>`, `<select>`, `<textarea>`, `<label>` ngoài `src/components/ui/`.
+
+#### UI Component Inventory (cập nhật khi thêm mới)
+
+| Component | Variants đáng chú ý |
+|-----------|---------------------|
+| `Button` | `default`, `secondary`, `outline`, `ghost`, `ghost-nav` (header icon), `zen` (CTA vàng) |
+| `Input` | `default` (form field), `underline` (newsletter) |
+| `Textarea` | — |
+| `Label` | `default`, `field` (uppercase gold, dùng cho form) |
+| `Select` | Radix Portal — cần set màu tường minh khi dùng trong header dark |
 
 ### 2. Tách bạch Giao diện và Dữ liệu (API-First Design)
 

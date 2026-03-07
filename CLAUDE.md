@@ -18,6 +18,68 @@
 - Mọi UI phải là Component độc lập, tái sử dụng.
 - **Ưu tiên Shadcn UI** — Kiểm tra thư viện Shadcn trước khi tự build component mới.
 
+---
+
+## ⚠️ QUY TẮC UI COMPONENT — BẮT BUỘC TUÂN THỦ
+
+### Nguyên tắc Thứ tự Ưu tiên
+
+Trước khi tạo bất kỳ UI element nào (`button`, `input`, `select`...), Agent **PHẢI** làm theo thứ tự sau:
+
+```
+1. Kiểm tra src/components/ui/ → Có component sẵn không?
+   └─ Có → DÙNG LẠI. Chỉ thêm variant/className nếu cần.
+   └─ Không có → Bước 2
+
+2. Kiểm tra Shadcn UI registry (shadcn.com/docs/components)
+   └─ Có → Cài bằng: npx shadcn@latest add <component>
+   └─ Không có → Bước 3
+
+3. Tự build base component mới trong src/components/ui/
+   └─ Dùng cva + Radix UI làm nền
+   └─ Đặt tên theo PascalCase chuẩn
+```
+
+> **NGHIÊM CẤM** dùng raw HTML (`<button>`, `<input>`, `<select>`, `<textarea>`, `<label>`)
+> ngoài folder `src/components/ui/`. Mọi nơi khác phải dùng component.
+
+### Inventory — Components Hiện có trong `src/components/ui/`
+
+| Component | File | Import |
+|-----------|------|--------|
+| Button | `button.tsx` | `import { Button } from '@/components/ui/button'` |
+| Input | `input.tsx` | `import { Input } from '@/components/ui/input'` |
+| Textarea | `textarea.tsx` | `import { Textarea } from '@/components/ui/textarea'` |
+| Label | `label.tsx` | `import { Label } from '@/components/ui/label'` |
+| Select | `select.tsx` | `import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'` |
+
+### Variants Hiện có
+
+**Button:**
+
+- `default` — nền primary
+- `secondary` — nền secondary
+- `outline` — viền
+- `ghost` — trong suốt
+- `ghost-nav` — dùng trong Header/Nav (không có ring)
+- `zen` — CTA vàng `bg-secondary`, `rounded-none`, `tracking-widest`
+- `link` — text link
+
+**Input:**
+
+- `default` — form field đầy đủ (bg-surface, viền, focus ring)
+- `underline` — chỉ gạch chân (dùng cho Newsletter)
+
+**Label:**
+
+- `default` — label thường
+- `field` — uppercase gold dùng trong form (tracking-widest, text-secondary)
+
+### Lưu ý Quan trọng về Context
+
+Shadcn Select dùng Radix Portal — popup **không kế thừa CSS** từ parent.
+Với element nằm trong header dark (`bg-primary`), dùng native `<select>` hoặc thêm màu tường minh vào SelectContent.
+
 ### API-First
 
 - Frontend chỉ "hiển thị". Logic xử lý dữ liệu nằm ở Backend/API layer.

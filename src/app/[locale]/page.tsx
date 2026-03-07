@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import HeroSwiper from '@/components/HeroSwiper';
 
@@ -34,7 +36,7 @@ export default function Home() {
               <p className="text-sm text-foreground/70 font-sans leading-relaxed mb-8">
                 {t('intro.description')}
               </p>
-              <Button variant="outline" className="rounded-none border-foreground/30 font-serif tracking-widest hover:bg-foreground hover:text-background px-8">
+              <Button variant="zen" className="px-16 py-6 text-sm w-full md:w-auto">
                 {t('intro.suggestMenu')}
               </Button>
            </div>
@@ -178,19 +180,20 @@ export default function Home() {
           </div>
           <form className="w-full md:w-6/12 flex items-end gap-0" onSubmit={e => e.preventDefault()}>
              <div className="flex-1">
-               <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-foreground/50 block mb-2">{c('email')}</label>
-               <input
+               <Label className="text-[9px] tracking-[0.2em] font-sans uppercase text-foreground/50 block mb-2">{c('email')}</Label>
+               <Input
                  type="email"
+                 variant="underline"
                  placeholder={t('newsletter.placeholder')}
-                 className="w-full border-b-2 border-foreground/30 bg-transparent pb-3 font-sans text-sm outline-none placeholder:text-foreground/40 focus:border-secondary transition-colors"
                />
              </div>
-             <button
+             <Button
                type="submit"
-               className="shrink-0 ml-4 bg-secondary text-primary font-serif tracking-widest text-xs px-8 py-3 hover:bg-gold-hover hover:text-primary transition-colors"
+               variant="zen"
+               className="shrink-0 ml-4 px-8 py-3 text-xs"
              >
                {t('newsletter.button')}
-             </button>
+             </Button>
           </form>
         </div>
       </section>

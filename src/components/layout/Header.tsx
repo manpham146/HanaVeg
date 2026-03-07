@@ -6,6 +6,7 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import { Phone, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 export default function Header() {
   const t = useTranslations('Navigation');
@@ -32,17 +33,19 @@ export default function Header() {
         </nav>
 
         {/* Mobile: Hamburger button */}
-        <button
-          className="lg:hidden p-2 -ml-2 text-background/80 hover:text-secondary transition-colors"
+        <Button
+          variant="ghost-nav"
+          size="icon"
+          className="lg:hidden p-2 -ml-2 text-background/80"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        </Button>
 
         {/* Center: Logo */}
         <Link href="/" className="flex items-center justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-          <Image src="/images/logo-transparent.png" alt="Hana Vegetarian" width={120} height={120} className="h-10 md:h-14 w-auto" priority />
+          <Image src="/images/logo-transparent.png" alt="Hana Vegetarian" width={160} height={160} className="h-14 md:h-20 w-auto" priority />
         </Link>
 
         {/* Right: Actions */}
@@ -63,7 +66,7 @@ export default function Header() {
             href="/booking"
             className="hidden md:inline-flex bg-secondary text-primary hover:bg-gold-hover font-serif rounded-none px-6 py-2.5 text-xs tracking-widest transition-colors items-center"
           >
-            {t('booking').toUpperCase()}
+            {t('booking')}
           </Link>
         </div>
       </div>

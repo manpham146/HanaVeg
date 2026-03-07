@@ -2,6 +2,10 @@
 
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -39,23 +43,23 @@ export default function BookingPage() {
             {/* Row 1: Name + Phone */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('name')}</label>
-                <input
+                <Label variant="field" htmlFor="name">{t('name')}</Label>
+                <Input
+                  id="name"
                   type="text"
                   value={name}
                   onChange={e => setName(e.target.value)}
                   placeholder={t('namePlaceholder')}
-                  className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none placeholder:text-foreground/35 focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all text-foreground"
                 />
               </div>
               <div>
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('phone')}</label>
-                <input
+                <Label variant="field" htmlFor="phone">{t('phone')}</Label>
+                <Input
+                  id="phone"
                   type="tel"
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
                   placeholder={t('phonePlaceholder')}
-                  className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none placeholder:text-foreground/35 focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all text-foreground"
                 />
               </div>
             </div>
@@ -63,55 +67,56 @@ export default function BookingPage() {
             {/* Row 2: Persons + Time + Date */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('persons')}</label>
-                <select
-                  value={persons}
-                  onChange={e => setPersons(e.target.value)}
-                  className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none cursor-pointer text-foreground focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all"
-                >
-                  {[1,2,3,4,5,6,7,8,10,12].map(n => (
-                    <option key={n} value={n}>{n} {n === 1 ? c('person') : c('persons')}</option>
-                  ))}
-                </select>
+                <Label variant="field">{t('persons')}</Label>
+                <Select value={persons} onValueChange={setPersons}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('persons')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {[1,2,3,4,5,6,7,8,10,12].map(n => (
+                      <SelectItem key={n} value={n.toString()}>{n} {n === 1 ? c('person') : c('persons')}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div>
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('time')}</label>
-                <select
-                  value={time}
-                  onChange={e => setTime(e.target.value)}
-                  className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none cursor-pointer text-foreground focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all"
-                >
-                  {['10:00','11:00','12:00','13:00','14:00','17:00','18:00','19:00','20:00','21:00'].map(h => (
-                    <option key={h} value={h}>{h}</option>
-                  ))}
-                </select>
+                <Label variant="field">{t('time')}</Label>
+                <Select value={time} onValueChange={setTime}>
+                  <SelectTrigger>
+                    <SelectValue placeholder={t('time')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {['10:00','11:00','12:00','13:00','14:00','17:00','18:00','19:00','20:00','21:00'].map(h => (
+                      <SelectItem key={h} value={h}>{h}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div>
-                <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('date')}</label>
-                <input
+                <Label variant="field" htmlFor="date">{t('date')}</Label>
+                <Input
+                  id="date"
                   type="date"
                   value={date}
                   onChange={e => setDate(e.target.value)}
-                  className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none text-foreground focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all"
                 />
               </div>
             </div>
 
-            {/* Row 3: Note */}
             <div>
-              <label className="text-[9px] tracking-[0.2em] font-sans uppercase text-secondary block mb-3 font-semibold">{t('note')}</label>
-              <textarea
+              <Label variant="field" htmlFor="note">{t('note')}</Label>
+              <Textarea
+                id="note"
                 value={note}
                 onChange={e => setNote(e.target.value)}
                 placeholder={t('notePlaceholder')}
                 rows={3}
-                className="w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none placeholder:text-foreground/35 focus:border-secondary focus:ring-1 focus:ring-secondary/30 transition-all text-foreground resize-none"
               />
             </div>
 
             {/* Submit */}
             <div className="text-center pt-4">
-              <Button className="bg-secondary text-white hover:bg-primary font-serif rounded-none px-16 py-6 text-sm tracking-widest transition-colors shadow-lg">
+              <Button variant="zen" className="px-16 py-6 text-sm w-full md:w-auto">
                 {t('submit')}
               </Button>
             </div>
