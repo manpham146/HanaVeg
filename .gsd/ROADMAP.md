@@ -32,7 +32,7 @@
 
 ### Phase 4: Admin Panel (Trang Quản trị)
 
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Objective**: Xây dựng trang nội bộ phân quyền Admin và Staff. Thêm chức năng CRUD cho Thực đơn, CRUD nội dung hiển thị ở các trang (nếu cần), kiểm soát nhân viên.
 **Requirements**: REQ-06
 **Dependencies**: Phase 3 (Database setup)
