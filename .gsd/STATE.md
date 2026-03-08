@@ -1,23 +1,30 @@
 # STATE.md
 
-> **Current Context**: Phase 1 & 2 hoàn tất. Sẵn sàng bắt đầu Phase 3 (Dynamic Content).
+> **Current Context**: Phase 3 planned — 3 execution plans ready.
 
 ## Current Position
 
-- **Phase**: 2 (completed) — sẵn sàng Phase 3
-- **Task**: N/A — chờ khởi tạo plan Phase 3
-- **Status**: Idle
+- **Phase**: 3 (planned) — sẵn sàng execute
+- **Task**: Planning complete
+- **Status**: Ready for execution
 
 ## Last Session Summary
 
-Cập nhật SPEC, ROADMAP, STATE cho đồng bộ hiện trạng thực tế: thêm trang Booking vào Goals, cập nhật Non-Goals, đánh dấu Phase 1 ✅ Complete, ghi nhận Booking page trong Phase 2.
+Phase 3 (Dynamic Content) đã được thảo luận và lên kế hoạch:
+
+- Plan 3.1: Supabase Database Setup (8 bảng + seed data) — Wave 1
+- Plan 3.2: Menu Page UI + API Layer — Wave 2
+- Plan 3.3: Blog Coming Soon stub — Wave 2
+
+Decisions ghi nhận: VNĐ, hiển thị "Hết món", Blog tách sang version tương lai, mock data, ảnh trên Supabase Storage.
 
 ## Important Information
 
 - **Stack**: Next.js 15 + Tailwind + Shadcn UI + Supabase + next-intl + Zustand
-- **i18n**: Đã chọn `next-intl` — 3 ngôn ngữ (VI, EN, ZH) hoạt động.
+- **i18n**: `next-intl` — 3 ngôn ngữ (VI, EN, ZH) hoạt động.
 - **Theme**: Dark green / Cream / Gold — Playfair Display + Jost.
-- **Trang đã xong**: Home, About, Gallery, Booking (form gửi yêu cầu).
+- **Philosophy**: An Nhiên (đã chuyển từ Thiền/Zen)
+- **Trang đã xong**: Home, About, Gallery, Booking
 
 ## Blockers / Unresolved Questions
 
@@ -25,4 +32,4 @@ Cập nhật SPEC, ROADMAP, STATE cho đồng bộ hiện trạng thực tế: t
 
 ## Next Steps
 
-1. Khởi tạo Kế hoạch (Plan) cho Phase 3: Dynamic Content (Menu & Blog).
+1. `/execute 3` — Thực thi Plan 3.1 trước (DB setup), rồi 3.2 + 3.3.
