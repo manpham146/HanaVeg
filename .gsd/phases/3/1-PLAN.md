@@ -8,7 +8,7 @@ wave: 1
 
 ## Objective
 
-Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana — bao gồm tất cả bảng cần thiết cho hiện tại (menu, bookings) và tương lai (blog, gallery, user profiles, settings). Seed mock data cho bảng `menu_items` để Phase 3.2 có dữ liệu hiển thị.
+Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana — bao gồm tất cả bảng cần thiết cho hiện tại (menu, bookings, tables) và tương lai (blog, gallery, user profiles, settings). Seed mock data cho bảng `menu_items` và `restaurant_tables` để Phase 3.2 có dữ liệu hiển thị.
 
 ## Context
 
@@ -39,34 +39,43 @@ Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana
        - `is_available` BOOLEAN DEFAULT TRUE, `sort_order` INT
        - `created_at` TIMESTAMPTZ
 
-    3. **Bảng `bookings`** — Đặt bàn (khớp với BookingRequest type)
+    3. **Bảng `restaurant_tables`** — Bàn vật lý trong nhà hàng
+       - `id` UUID PK, `name` TEXT NOT NULL (VD: "Bàn 1", "Bàn VIP")
+       - `capacity` INT NOT NULL (số chỗ ngồi tối đa)
+       - `location` TEXT (vị trí: "Tầng 1", "Sân vườn", "Phòng riêng")
+       - `status` TEXT DEFAULT 'available' (available / occupied / reserved / maintenance)
+       - `is_active` BOOLEAN DEFAULT TRUE
+       - `sort_order` INT, `created_at` TIMESTAMPTZ
+
+    4. **Bảng `bookings`** — Đặt bàn (khớp với BookingRequest type)
        - `id` UUID PK, `guest_name` TEXT, `guest_phone` TEXT
        - `party_size` INT, `booking_date` DATE, `booking_time` TIME
+       - `table_id` UUID FK → restaurant_tables (NULL = chưa assign bàn)
        - `note` TEXT, `status` TEXT DEFAULT 'pending'
        - `created_at` TIMESTAMPTZ
 
-    4. **Bảng `blog_posts`** — Blog (tương lai, khớp với BlogPost type)
+    5. **Bảng `blog_posts`** — Blog (tương lai, khớp với BlogPost type)
        - `id` UUID PK, `title` TEXT, `subtitle` TEXT, `slug` TEXT UNIQUE
        - `content` TEXT, `cover_image` TEXT
        - `author_id` UUID FK → profiles
        - `is_published` BOOLEAN DEFAULT FALSE
        - `published_at` TIMESTAMPTZ, `created_at` TIMESTAMPTZ
 
-    5. **Bảng `blog_categories`** — Danh mục blog (tương lai)
+    6. **Bảng `blog_categories`** — Danh mục blog (tương lai)
        - `id` UUID PK, `name` TEXT, `slug` TEXT UNIQUE
        - `created_at` TIMESTAMPTZ
 
-    6. **Bảng `gallery_images`** — Bộ sưu tập ảnh
+    7. **Bảng `gallery_images`** — Bộ sưu tập ảnh
        - `id` UUID PK, `image_url` TEXT, `alt_text` TEXT
        - `sort_order` INT, `is_visible` BOOLEAN DEFAULT TRUE
        - `created_at` TIMESTAMPTZ
 
-    7. **Bảng `profiles`** — User profiles cho Admin/Staff
+    8. **Bảng `profiles`** — User profiles cho Admin/Staff
        - `id` UUID PK FK → auth.users, `email` TEXT
        - `full_name` TEXT, `role` TEXT DEFAULT 'staff'
        - `created_at` TIMESTAMPTZ
 
-    8. **Bảng `site_settings`** — Cấu hình website
+    9. **Bảng `site_settings`** — Cấu hình website
        - `id` UUID PK, `key` TEXT UNIQUE, `value` JSONB
        - `created_at` TIMESTAMPTZ, `updated_at` TIMESTAMPTZ
 
@@ -80,8 +89,8 @@ Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana
     - Tên cột snake_case
     - Dùng UUID v4 cho tất cả PK
   </action>
-  <verify>File .gsd/phases/3/supabase-schema.sql tồn tại và có đủ 8 CREATE TABLE</verify>
-  <done>SQL file chứa toàn bộ schema cho 8 bảng + RLS policies + indexes</done>
+  <verify>File .gsd/phases/3/supabase-schema.sql tồn tại và có đủ 9 CREATE TABLE</verify>
+  <done>SQL file chứa toàn bộ schema cho 9 bảng + RLS policies + indexes</done>
 </task>
 
 <task type="auto">
@@ -100,10 +109,10 @@ Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana
        Khai vị:
        - Gỏi cuốn chay (75.000₫)
        - Chả giò nấm (65.000₫)
-       - Salad đậu hũ (85.000₫)
+       - Salad đậu hũ (95.000₫)
        
        Món chính:
-       - Nấm Truffle Hảo Hạng (185.000₫)
+       - Nấm Truffle Hảo Hạng (195.000₫)
        - Đậu Hũ Miso Nhật (120.000₫)
        - Cà Ri Rau Củ Vàng (110.000₫)
        - Cơm chiên rau thập cẩm (95.000₫)
@@ -143,7 +152,7 @@ Tạo toàn bộ database schema trên Supabase cho website nhà hàng chay Hana
 
 ## Success Criteria
 
-- [ ] 8 bảng database đã tạo trên Supabase
+- [ ] 9 bảng database đã tạo trên Supabase
 - [ ] 4 danh mục + 12-16 món ăn mock trong DB
 - [ ] RLS policies cho phép public read
 - [ ] Storage bucket "images" tồn tại
