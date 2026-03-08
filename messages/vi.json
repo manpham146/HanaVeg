@@ -194,5 +194,11 @@
         "all": "Tất cả",
         "soldOut": "Hết món",
         "empty": "Chưa có món ăn nào trong danh mục này."
+    },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Chia sẻ từ Hana",
+        "comingSoonTitle": "Sắp Ra Mắt",
+        "comingSoonDesc": "Blog của Hana sẽ chia sẻ về cách sống an nhiên, triết lý ẩm thực chay, công thức nấu ăn và những câu chuyện truyền cảm hứng về lối sống thuần thực vật."
     }
 }

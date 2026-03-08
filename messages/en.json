@@ -194,5 +194,11 @@
         "all": "All",
         "soldOut": "Sold Out",
         "empty": "No dishes available in this category yet."
+    },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Stories from Hana",
+        "comingSoonTitle": "Coming Soon",
+        "comingSoonDesc": "Hana's blog will share stories about serene living, plant-based philosophy, vegetarian recipes, and inspiring stories about a mindful, compassionate lifestyle."
     }
 }
