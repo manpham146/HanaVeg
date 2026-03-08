@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-const slideImages = ['/images/hero-1.jpg', '/images/hero-2.jpg', '/images/hero-3.jpg'];
+const slideImages = ['/images/hero-1-veg.png', '/images/hero-2-veg.png', '/images/hero-3.jpg'];
 
 export default function HeroSwiper() {
   const t = useTranslations('HeroSwiper');

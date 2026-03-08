@@ -24,10 +24,10 @@ export default function Home() {
          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
            <div className="w-full lg:w-1/2 relative h-[300px] md:h-[500px]">
               <div className="absolute left-0 top-0 w-3/4 md:w-2/3 h-[240px] md:h-[400px] overflow-hidden">
-                <Image src="/images/section-dish-1.jpg" fill alt="Hana dish" className="object-cover" sizes="(max-width: 768px) 75vw, 33vw" />
+                <Image src="/images/section-dish-1-veg.png" fill alt="Hana dish" className="object-cover" sizes="(max-width: 768px) 75vw, 33vw" />
               </div>
               <div className="absolute right-0 bottom-0 w-3/4 md:w-2/3 h-[200px] md:h-[360px] overflow-hidden border-4 border-background shadow-2xl z-10">
-                <Image src="/images/section-interior.jpg" fill alt="Hana interior" className="object-cover" sizes="(max-width: 768px) 75vw, 33vw" />
+                <Image src="/images/section-interior-veg.png" fill alt="Hana interior" className="object-cover" sizes="(max-width: 768px) 75vw, 33vw" />
               </div>
            </div>
            <div className="w-full lg:w-1/2 max-w-md">
@@ -118,10 +118,10 @@ export default function Home() {
            </div>
            <div className="w-full lg:w-1/2 flex justify-end relative h-[420px]">
               <div className="absolute left-0 top-0 w-[65%] h-full overflow-hidden">
-                <Image src="/images/chef-kitchen.jpg" fill alt="Hana kitchen" className="object-cover" sizes="32vw" />
+                <Image src="/images/chef-kitchen-veg.png" fill alt="Hana kitchen" className="object-cover" sizes="32vw" />
               </div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[280px] overflow-hidden border-8 border-surface shadow-2xl z-10">
-                <Image src="/images/dish-close.jpg" fill alt="Hana dish close" className="object-cover" sizes="23vw" />
+                <Image src="/images/dish-close-veg.png" fill alt="Hana dish close" className="object-cover" sizes="23vw" />
               </div>
            </div>
         </div>
@@ -130,7 +130,7 @@ export default function Home() {
       {/* 7. Image Collage */}
       <section className="bg-primary overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 h-[280px] md:h-[380px]">
-          {['/images/gallery-1.jpg', '/images/gallery-2.jpg', '/images/gallery-3.jpg', '/images/gallery-4.jpg'].map((src, i) => (
+          {['/images/gallery-1.jpg', '/images/gallery-2-veg.png', '/images/gallery-3.jpg', '/images/gallery-4-veg.png'].map((src, i) => (
             <div key={i} className="relative overflow-hidden group">
               <Image src={src} fill alt={`gallery ${i+1}`} className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="25vw" />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />

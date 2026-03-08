@@ -4,6 +4,42 @@
 
 ---
 
+## [2026-03-08] — Chuyển đổi triết lý từ Thiền/Zen sang An Nhiên
+
+### Sửa đổi
+
+- `messages/vi.json` — Toàn bộ nội dung chuyển từ "Thiền" sang "An Nhiên": Metadata, HeroSwiper, hero, intro, service, testimonials, values (v5→Thiện Duyên, v6→An Nhiên), About (Triết Lý An Nhiên, Kết Nối Thiện Duyên), Gallery, Footer, Booking
+- `messages/en.json` — Toàn bộ nội dung chuyển từ "Zen" sang "Serenity/An Nhiên": tương ứng vi.json
+- `messages/zh.json` — Toàn bộ nội dung chuyển từ "禅" sang "安然": tương ứng vi.json
+- `.gsd/SPEC.md` — Vision cập nhật từ "phong cách Thiền (Zen)" sang "phong cách An Nhiên" với mô tả triết lý mới
+- `Project_Spec.md` — Tên dự án, khách hàng mục tiêu, UI/UX vibe, homepage description cập nhật theo triết lý An Nhiên
+- `public/images/about-philosophy.png` — Ảnh mới: không gian nhà hàng chay an nhiên, thoải mái
+- `public/images/about-passion.png` — Ảnh mới: kết nối thiện duyên, sân vườn ấm áp
+
+---
+
+## [2026-03-08] — Page-Specific Images + Project Rules
+
+### Thêm mới
+
+- `public/images/about-header.png` — Header riêng trang About (zen interior)
+- `public/images/gallery-header.png` — Header riêng trang Gallery (vegetarian dishes)
+- `public/images/about-philosophy.png` — Hình zen garden cho mục Zen Philosophy
+- `public/images/about-passion.png` — Hình organic harvest cho mục Love for Nature
+- `public/images/gallery-1.png` → `gallery-6.png` — 6 hình grid Gallery (salad, bowl, toast, interior, plating, tea)
+
+### Sửa đổi
+
+- `page.tsx`, `booking/page.tsx`, `HeroSwiper.tsx` — Chuyển URL ảnh sang file `-veg.png` mới để xoá cache Next.js cứng đầu.
+- `CLAUDE.md` — Thêm rule #8 (hình ảnh thuần chay), tăng cường rule #6 (CHANGELOG bắt buộc)
+- `.gsd/SPEC.md` — Thêm constraint hình ảnh thuần chay vào Constraints
+
+### Xóa
+
+- Xóa các file ảnh cũ vi phạm quy tắc nhà hàng chay: `banner.jpg`, `hero-1.jpg`, `hero-2.jpg`, `dish-close.jpg`, `chef-kitchen.jpg`, `section-interior.jpg`, `gallery-2.jpg`, `gallery-4.jpg`, `section-dish-1.jpg`.
+
+---
+
 ## [2026-03-07] — Fix Language Switcher & Sync GSD Docs
 
 ### Sửa đổi

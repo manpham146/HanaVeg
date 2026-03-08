@@ -23,7 +23,7 @@ export default function BookingPage() {
     <div className="min-h-screen bg-surface">
       {/* Hero banner */}
       <div className="relative h-[35vh] overflow-hidden">
-        <Image src="/images/banner.jpg" fill alt="Booking" className="object-cover object-center" sizes="100vw" />
+        <Image src="/images/banner-veg.png" fill alt="Booking" className="object-cover object-center" sizes="100vw" />
         <div className="absolute inset-0 bg-primary/60 flex items-center justify-center">
           <div className="text-center">
             <p className="text-[10px] tracking-[0.3em] font-sans uppercase text-secondary mb-4">{t('label')}</p>

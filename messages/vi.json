@@ -1,7 +1,7 @@
 {
     "Metadata": {
-        "title": "HanaVeg - Nhà hàng Chay phong cách Thiền",
-        "description": "Trải nghiệm ẩm thực tĩnh lặng"
+        "title": "Hana - Nhà hàng Chay An Nhiên",
+        "description": "An nhiên trong từng trải nghiệm ẩm thực"
     },
     "Common": {
         "brandName": "Hana",
@@ -14,19 +14,19 @@
     "HeroSwiper": {
         "slides": [
             {
-                "label": "AMBIENT",
+                "label": "AN NHIÊN",
                 "title": "Tinh Hoa",
                 "titleAccent": "ẨM THỰC CHAY",
-                "desc": "Trải nghiệm ẩm thực thuần thực vật với cách chế biến tinh tế, từng nguyên liệu được chọn lọc kỹ lưỡng."
+                "desc": "Buông bỏ bộn bề, an nhiên thưởng thức ẩm thực thuần thực vật với cách chế biến tinh tế, từng nguyên liệu được chọn lọc kỹ lưỡng."
             },
             {
-                "label": "SIGNATURE",
+                "label": "THIỆN DUYÊN",
                 "title": "Không Gian",
-                "titleAccent": "BÌNH YÊN",
-                "desc": "Hana được thiết kế như một ốc đảo xanh mát giữa lòng đô thị, nơi bạn hoàn toàn thư giãn."
+                "titleAccent": "AN NHIÊN",
+                "desc": "Hana được thiết kế như một ốc đảo an nhiên giữa lòng đô thị, nơi bạn buông bỏ mọi mệt mỏi và hoàn toàn thư giãn."
             },
             {
-                "label": "FRESH",
+                "label": "THUẦN KHIẾT",
                 "title": "Nguyên Liệu",
                 "titleAccent": "THUẦN KHIẾT",
                 "desc": "Cam kết 100% hữu cơ — rau củ quả tươi ngon được thu hoạch và chế biến trong ngày."
@@ -43,9 +43,9 @@
     },
     "Index": {
         "hero": {
-            "label": "Nhà hàng chay tinh tế",
-            "title": "Hương vị thuần khiết từ thiên nhiên",
-            "subtitle": "Hana mang đến trải nghiệm ẩm thực chay đẳng cấp, nơi mỗi món ăn là một tác phẩm nghệ thuật từ những nguyên liệu tươi ngon nhất.",
+            "label": "Nhà hàng chay an nhiên",
+            "title": "An nhiên thưởng thức hương vị thuần khiết",
+            "subtitle": "Hana mang đến trải nghiệm ẩm thực chay an nhiên, nơi bạn buông bỏ mọi bộn bề để thưởng thức từng món ăn được chế biến từ những nguyên liệu tươi ngon nhất.",
             "bookTable": "Đặt bàn ngay",
             "viewMenu": "Xem thực đơn",
             "persons": "Số người",
@@ -54,9 +54,9 @@
             "bookNow": "Đặt ngay"
         },
         "intro": {
-            "label": "Chuyên môn của chúng tôi",
-            "title": "Ẩm thực chay tinh tế dành cho những khoảnh khắc đặc biệt",
-            "description": "Tại Hana, chúng tôi tin rằng ẩm thực thuần thực vật có thể mang lại trải nghiệm xa xỉ và đầy cảm xúc. Từng nguyên liệu được tuyển chọn kỹ lưỡng, từng món ăn được chế biến với tất cả tấm lòng – tạo nên một bữa tiệc thực sự cho các giác quan.",
+            "label": "Triết lý An Nhiên",
+            "title": "Ẩm thực chay an nhiên dành cho những khoảnh khắc bình yên",
+            "description": "Tại Hana, chúng tôi tin rằng ẩm thực thuần thực vật có thể mang lại sự an nhiên trọn vẹn. Sau những bộn bề mệt mỏi ngoài xã hội, Hana là nơi bạn buông bỏ tâm trí để thưởng thức từng món ăn được chế biến với tất cả tấm lòng — một bữa tiệc an nhiên cho mọi giác quan.",
             "suggestMenu": "Khám phá thực đơn"
         },
         "features": {
@@ -99,12 +99,12 @@
             }
         },
         "service": {
-            "title": "Dịch vụ xuất sắc và món ăn đỉnh cao – lựa chọn hoàn hảo cho bạn.",
-            "desc": "Chúng tôi biết bạn chỉ muốn những điều tốt nhất. Hãy đến Hana và khám phá nghệ thuật ẩm thực thực sự.",
+            "title": "An nhiên thưởng thức — món ăn tinh tế và dịch vụ tận tâm từ trái tim.",
+            "desc": "Hana được xây nên từ tâm kết nối thiện duyên, mong gửi đến bạn sự an nhiên trong từng khoảnh khắc. Hãy để chúng tôi chăm sóc bạn.",
             "signature": "Hana Restaurant"
         },
         "testimonials": {
-            "quote": "Hana là nơi mà tôi tìm thấy sự bình yên thực sự trong từng bữa ăn. Không gian tuyệt vời, món ăn ngon không tưởng – một trải nghiệm mà tôi sẽ kể mãi cho bạn bè.",
+            "quote": "Hana là nơi mà tôi tìm thấy sự an nhiên thực sự trong từng bữa ăn. Sau những ngày bộn bề, không gian và món ăn nơi đây giúp tôi buông bỏ mọi mệt mỏi — một trải nghiệm mà tôi sẽ kể mãi cho bạn bè.",
             "author": "Minh Châu – Khách hàng thân thiết"
         },
         "values": {
@@ -130,13 +130,13 @@
             },
             "v5": {
                 "icon": "❤️",
-                "title": "Made With Love",
-                "desc": "Nấu bằng tâm huyết\nvà tình yêu thương"
+                "title": "Thiện Duyên",
+                "desc": "Nấu bằng tâm kết nối\nvà tình yêu thương"
             },
             "v6": {
                 "icon": "🌸",
-                "title": "Zen Inspired",
-                "desc": "Không gian thiết kế\ntheo triết lý thiền"
+                "title": "An Nhiên",
+                "desc": "Không gian thiết kế\ntheo triết lý an nhiên"
             }
         },
         "newsletter": {
@@ -148,18 +148,18 @@
     },
     "About": {
         "title": "Về Hana",
-        "subtitle": "Hành trình tìm về sự tĩnh lặng qua ẩm thực thuần thực vật.",
-        "philosophyTitle": "Triết Lý Thiền",
-        "philosophyText": "Tại Hana, chúng tôi tin rằng mỗi bữa ăn là một trải nghiệm thiền định. Thức ăn không chỉ nuôi dưỡng cơ thể mà còn làm dịu tâm hồn. Mọi nguyên liệu đều được chọn lọc kỹ càng để giữ trọn vẻ đẹp tự nhiên vốn có.",
-        "passionTitle": "Tình Yêu Thiên Nhiên",
-        "passionText": "Thiên nhiên là nguồn cảm hứng bất tận. Từ kiến trúc không gian đến cách bài trí món ăn, chúng tôi luôn nỗ lực tái hiện sự mộc mạc, tĩnh lặng của cỏ cây, hoa lá vào từng khoảnh khắc bạn hiện diện nơi đây."
+        "subtitle": "An nhiên trong hành trình thưởng thức ẩm thực thuần thực vật.",
+        "philosophyTitle": "Triết Lý An Nhiên",
+        "philosophyText": "Tại Hana, chúng tôi tin rằng mỗi bữa ăn là một khoảnh khắc an nhiên. Sau những bộn bề mệt mỏi ngoài xã hội, Hana mong muốn bạn đến đây để buông bỏ mọi lo toan, tĩnh lặng tâm trí và thưởng thức từng hương vị thuần khiết. Mọi nguyên liệu đều được chọn lọc kỹ càng để giữ trọn vẻ đẹp tự nhiên vốn có.",
+        "passionTitle": "Kết Nối Thiện Duyên",
+        "passionText": "Chủ quán xây nên Hana với tâm kết nối thiện duyên, gửi sự an nhiên đến mọi khách hàng. Thiên nhiên là nguồn cảm hứng bất tận — từ không gian đến cách bài trí món ăn, chúng tôi luôn nỗ lực tái hiện sự mộc mạc, an nhiên của cỏ cây, hoa lá vào từng khoảnh khắc bạn hiện diện nơi đây."
     },
     "Gallery": {
         "title": "Bộ Sưu Tập",
-        "subtitle": "Ngắm nhìn những khoảnh khắc bình yên và món chay thanh tịnh tại Hana."
+        "subtitle": "Ngắm nhìn những khoảnh khắc an nhiên và món chay thanh tịnh tại Hana."
     },
     "Footer": {
-        "brandDesc": "Không gian ẩm thực chay tinh tế, nơi mỗi bữa ăn trở thành một hành trình cảm xúc.",
+        "brandDesc": "Không gian ẩm thực chay an nhiên, nơi bạn buông bỏ bộn bề và thưởng thức từng khoảnh khắc bình yên.",
         "explore": "Khám phá",
         "contact": "Liên hệ",
         "menuLink": "Thực đơn",
@@ -176,7 +176,7 @@
     "Booking": {
         "label": "Đặt chỗ trước",
         "title": "Đặt Bàn",
-        "description": "Hãy đặt bàn trước để chúng tôi chuẩn bị không gian tốt nhất dành cho bạn.",
+        "description": "Hãy đặt bàn trước để chúng tôi chuẩn bị không gian an nhiên nhất dành cho bạn.",
         "name": "Họ và tên",
         "namePlaceholder": "Nhập họ và tên",
         "phone": "Số điện thoại",

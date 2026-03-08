@@ -141,10 +141,17 @@ src/
 3. **Định nghĩa Type/Interface** trước khi code logic.
 4. **Không hard-code** — Dùng design tokens từ Tailwind config.
 5. **Tách API layer** — Đặt logic gọi dữ liệu trong `lib/`, không trong component.
-6. **Viết tài liệu sau mỗi thay đổi** — Sau khi hoàn thành fix bug hoặc feature mới, **BẮT BUỘC** cập nhật file `.gsd/CHANGELOG.md`. Ghi entry mới theo nhóm ngày `[YYYY-MM-DD]`, gồm:
-   - **Thêm mới** — Files/features mới
-   - **Sửa đổi** — Files đã thay đổi và lý do
-   - **Xóa** — Files đã xóa (nếu có)
+6. **⚠️ Cập nhật CHANGELOG — BẮT BUỘC sau MỌI thay đổi**:
+   - **KHÔNG ĐƯỢC** báo hoàn thành task mà chưa cập nhật `.gsd/CHANGELOG.md`.
+   - Đây là bước **CUỐI CÙNG** của mọi fix bug hoặc thêm feature mới — PHẢI thực hiện trước khi kết thúc.
+   - Format entry theo nhóm ngày `## [YYYY-MM-DD] — Tên thay đổi`, gồm:
+     - **Thêm mới** — Files/features/assets mới
+     - **Sửa đổi** — Files đã thay đổi và lý do
+     - **Xóa** — Files đã xóa (nếu có)
 7. **Hỏi và Xác nhận (Giao tiếp với User)**:
    - Nếu requirement chưa rõ / thiếu thông tin: **PHẢI DỪNG LẠI VÀ HỎI USER**, không tự đoán mò.
    - Khi có thay đổi lớn (hoặc sinh hình ảnh/assets): Cần generate, show cho user xem qua, đợi **Xác nhận (Confirm)** rồi mới update trực tiếp vào code file. Tôn trọng luồng review.
+8. **Hình ảnh — 100% Thuần Chay (Vegetarian/Vegan Only)**:
+   - Đây là **Nhà hàng CHAY**. Khi gen hình ảnh hoặc chọn ảnh minh họa, **NGHIÊM CẤM** có thịt, cá, hải sản, hoặc bất kỳ thực phẩm động vật nào.
+   - Prompt gen hình **BẮT BUỘC** ghi rõ: `strictly vegetarian/vegan food only, no meat, no seafood, no animal products`.
+   - Thức ăn trong hình phải gắn liền với đồ chay: rau củ, đậu hũ, nấm, ngũ cốc, trái cây, thảo mộc, v.v.

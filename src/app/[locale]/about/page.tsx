@@ -16,25 +16,19 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-zinc-900 overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1545224144-b38cd30dd488?q=80&w=2669&auto=format&fit=crop')" }} 
-        />
-        <motion.div 
-          className="relative z-20 container mx-auto px-4 text-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
-            {t('subtitle')}
-          </p>
-        </motion.div>
+      <section className="relative h-[35vh] overflow-hidden">
+        <Image src="/images/about-header.png" fill alt="About" className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-primary/60 flex items-center justify-center">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <p className="text-[10px] tracking-[0.3em] font-sans uppercase text-secondary mb-4">{t('subtitle')}</p>
+            <h1 className="text-4xl md:text-6xl font-serif text-background">{t('title')}</h1>
+          </motion.div>
+        </div>
       </section>
 
       {/* Content */}
@@ -60,7 +54,7 @@ export default function AboutPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <Image src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2653&auto=format&fit=crop" fill alt="Philosophy" className="object-cover" />
+            <Image src="/images/about-philosophy.png" fill alt="Philosophy" className="object-cover" />
           </motion.div>
         </div>
 
@@ -73,7 +67,7 @@ export default function AboutPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <Image src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2574&auto=format&fit=crop" fill alt="Passion for Nature" className="object-cover" />
+            <Image src="/images/about-passion.png" fill alt="Passion for Nature" className="object-cover" />
           </motion.div>
           <motion.div
             className="order-1 md:order-2"

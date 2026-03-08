@@ -1,7 +1,7 @@
 {
     "Metadata": {
-        "title": "HanaVeg - Zen-style Vegetarian Restaurant",
-        "description": "A tranquil dining experience"
+        "title": "Hana - Serenity Vegetarian Restaurant",
+        "description": "Serenity in every dining experience"
     },
     "Common": {
         "brandName": "Hana",
@@ -14,19 +14,19 @@
     "HeroSwiper": {
         "slides": [
             {
-                "label": "AMBIENT",
+                "label": "SERENITY",
                 "title": "The Essence of",
                 "titleAccent": "PLANT-BASED CUISINE",
-                "desc": "Experience pure plant-based cuisine with refined preparation, every ingredient carefully selected."
+                "desc": "Let go of the everyday rush and serenely savor pure plant-based cuisine, every ingredient carefully selected with love."
             },
             {
-                "label": "SIGNATURE",
+                "label": "GOOD KARMA",
                 "title": "A Space of",
-                "titleAccent": "TRANQUILITY",
-                "desc": "Hana is designed as a green oasis in the heart of the city, where you can fully relax."
+                "titleAccent": "SERENITY",
+                "desc": "Hana is designed as a serene oasis in the heart of the city, where you let go of all weariness and find true peace."
             },
             {
-                "label": "FRESH",
+                "label": "PURE",
                 "title": "Ingredients of",
                 "titleAccent": "PURE NATURE",
                 "desc": "Committed to 100% organic — fresh vegetables harvested and prepared daily."
@@ -43,9 +43,9 @@
     },
     "Index": {
         "hero": {
-            "label": "Refined Vegetarian Dining",
-            "title": "Pure Flavors From Nature",
-            "subtitle": "Hana offers a world-class vegetarian dining experience, where every dish is a masterpiece crafted from the finest ingredients.",
+            "label": "Serenity Vegetarian Dining",
+            "title": "Serenely Savor the Purest Flavors",
+            "subtitle": "Hana offers a serene vegetarian dining experience, where you leave behind the daily chaos and savor every dish crafted from the finest ingredients.",
             "bookTable": "Book a Table",
             "viewMenu": "View Menu",
             "persons": "Persons",
@@ -54,9 +54,9 @@
             "bookNow": "Book Now"
         },
         "intro": {
-            "label": "Our Expertise",
-            "title": "Refined Vegetarian Cuisine For Those Special Moments In Life",
-            "description": "At Hana, we believe plant-based cuisine can deliver a truly luxurious and emotional experience. Each ingredient is meticulously selected, each dish crafted with complete dedication — creating a genuine feast for the senses.",
+            "label": "An Nhiên Philosophy",
+            "title": "Serene Vegetarian Cuisine For Your Moments of Peace",
+            "description": "At Hana, we believe plant-based cuisine can bring complete serenity. After the hustle and bustle of daily life, Hana is your place to let go, quiet your mind, and savor each dish crafted with heartfelt dedication — a serene feast for all the senses.",
             "suggestMenu": "Explore The Menu"
         },
         "features": {
@@ -99,12 +99,12 @@
             }
         },
         "service": {
-            "title": "Our Excellent Service And Top Quality Dishes Are Unmatched. Pick The Best.",
-            "desc": "We know you want only the best for yourself. Come to Hana and discover true culinary art.",
+            "title": "Serenely Savor — Refined Dishes And Heartfelt Service From The Soul.",
+            "desc": "Hana was built with a heart of good karma, wishing to bring serenity to every guest in every moment. Let us take care of you.",
             "signature": "Hana Restaurant"
         },
         "testimonials": {
-            "quote": "Hana is where I find true peace in every meal. The ambience is breathtaking, the food is incredible – an experience I will keep recommending to everyone I know.",
+            "quote": "Hana is where I find true serenity in every meal. After hectic days, the space and food here help me let go of all weariness — an experience I will keep recommending to everyone I know.",
             "author": "Minh Chau – Loyal Guest"
         },
         "values": {
@@ -130,13 +130,13 @@
             },
             "v5": {
                 "icon": "❤️",
-                "title": "Made With Love",
-                "desc": "Cooked with heartfelt\ndedication always"
+                "title": "Good Karma",
+                "desc": "Cooked with heartfelt\nconnection and love"
             },
             "v6": {
                 "icon": "🌸",
-                "title": "Zen Inspired",
-                "desc": "Space designed\nby Zen principles"
+                "title": "An Nhiên",
+                "desc": "Space designed for\nserenity and peace"
             }
         },
         "newsletter": {
@@ -148,18 +148,18 @@
     },
     "About": {
         "title": "About Hana",
-        "subtitle": "A journey to tranquility through plant-based cuisine.",
-        "philosophyTitle": "Zen Philosophy",
-        "philosophyText": "At Hana, we believe every meal is a meditative experience. Food not only nourishes the body but also soothes the soul. Every ingredient is carefully selected to retain its inherent natural beauty.",
-        "passionTitle": "Love for Nature",
-        "passionText": "Nature is an endless source of inspiration. From the spatial architecture to the food presentation, we always strive to recreate the rustic, tranquil beauty of plants and flowers in every moment you spend here."
+        "subtitle": "Serenity in the journey of savoring plant-based cuisine.",
+        "philosophyTitle": "An Nhiên Philosophy",
+        "philosophyText": "At Hana, we believe every meal is a moment of serenity. After the hustle and bustle of daily life, Hana invites you to let go of all worries, quiet your mind, and savor each pure flavor. Every ingredient is carefully selected to retain its inherent natural beauty.",
+        "passionTitle": "Good Karma Connection",
+        "passionText": "The owner built Hana with a heart of good karma, sending serenity to every guest. Nature is an endless source of inspiration — from the spatial design to the food presentation, we strive to recreate the rustic, serene beauty of plants and flowers in every moment you spend here."
     },
     "Gallery": {
         "title": "Gallery",
-        "subtitle": "Explore the peaceful moments and pure vegetarian dishes at Hana."
+        "subtitle": "Explore the serene moments and pure vegetarian dishes at Hana."
     },
     "Footer": {
-        "brandDesc": "A refined vegetarian dining space where every meal becomes an emotional journey.",
+        "brandDesc": "A serene vegetarian dining space where you let go of the everyday rush and savor every peaceful moment.",
         "explore": "Explore",
         "contact": "Contact",
         "menuLink": "Menu",
@@ -176,7 +176,7 @@
     "Booking": {
         "label": "Reserve in Advance",
         "title": "Book a Table",
-        "description": "Reserve your table ahead so we can prepare the perfect space for you.",
+        "description": "Reserve your table ahead so we can prepare the most serene space for you.",
         "name": "Full Name",
         "namePlaceholder": "Enter your full name",
         "phone": "Phone Number",

@@ -4,7 +4,7 @@
 
 ## Vision
 
-Xây dựng một website Nhà hàng Chay phong cách Thiền (Zen) mang lại cảm giác bình yên, không gian mở và thiên nhiên, lấy cảm hứng từ hình ảnh hoa sen và màu xanh ngọc bích. Hệ thống có khả năng mở rộng cao và nhiều ngôn ngữ, giúp quản lý thực đơn và nội dung dễ dàng.
+Xây dựng một website Nhà hàng Chay phong cách An Nhiên, mang đến cảm giác an nhiên, thoải mái cho khách hàng. Sau những bộn bề mệt mỏi ngoài xã hội, quán chay Hana mong muốn khách đến và buông bỏ mọi lo toan, an nhiên trải nghiệm đồ ăn. Chủ quán xây nên quán chay với tâm kết nối thiện duyên và gửi tâm an nhiên đến mọi khách hàng. Hệ thống có khả năng mở rộng cao và nhiều ngôn ngữ, giúp quản lý thực đơn và nội dung dễ dàng.
 
 ## Goals
 
@@ -33,6 +33,7 @@ Xây dựng một website Nhà hàng Chay phong cách Thiền (Zen) mang lại c
 - TypeScript (Strict Mode, không dùng `any`).
 - Supabase PostgreSQL cho cơ sở dữ liệu và Auth.
 - API-First & Component-Driven Design.
+- **Hình ảnh Thuần Chay:** Đây là nhà hàng CHAY. Mọi hình ảnh (gen AI, stock photo, minh họa) **PHẢI** chỉ chứa thức ăn chay/thuần chay. **NGHIÊM CẤM** có thịt, cá, hải sản, hoặc thực phẩm động vật trong bất kỳ hình ảnh nào trên website.
 
 ## Định hướng Kiến trúc (Architecture Guidelines) — BẮT BUỘC
 

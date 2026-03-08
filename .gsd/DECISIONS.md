@@ -1,5 +1,13 @@
 # DECISIONS.md
 
+## Phase 2 — Social Icons Placement
+
+**Date:** 2026-03-08
+**Decision:** Social icons (Facebook, Instagram) chỉ cần ở Footer, không cần ở Header.
+**Reason:** User xác nhận Footer đã đủ — Header giữ gọn gàng với nav + phone + language + CTA.
+
+---
+
 > Kiến trúc và quyết định kỹ thuật sẽ được ghi lại ở đây (ADRs).
 
 | ID | Quyết định | Bối cảnh | Trạng thái |

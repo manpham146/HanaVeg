@@ -7,28 +7,31 @@ import { motion } from 'framer-motion';
 export default function GalleryPage() {
   const t = useTranslations('Gallery');
 
-  // Hardcoded images for Masonry Layout
   const images = [
-    { src: 'https://images.unsplash.com/photo-1490818387583-1b0ba687007b?q=80&w=2670&auto=format&fit=crop', alt: 'Fresh Salad', aspect: 'aspect-[3/4]' },
-    { src: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2670&auto=format&fit=crop', alt: 'Healthy Bowl', aspect: 'aspect-square' },
-    { src: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2600&auto=format&fit=crop', alt: 'Avocado Toast', aspect: 'aspect-[4/3]' },
-    { src: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2670&auto=format&fit=crop', alt: 'Zen Space', aspect: 'aspect-square' },
-    { src: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2574&auto=format&fit=crop', alt: 'Restaurant Interior', aspect: 'aspect-[3/4]' },
-    { src: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2574&auto=format&fit=crop', alt: 'Plant Base', aspect: 'aspect-video' },
+    { src: '/images/gallery-1.png', alt: 'Fresh Salad', aspect: 'aspect-[3/4]' },
+    { src: '/images/gallery-2.png', alt: 'Healthy Bowl', aspect: 'aspect-square' },
+    { src: '/images/gallery-3.png', alt: 'Avocado Toast', aspect: 'aspect-[4/3]' },
+    { src: '/images/gallery-4.png', alt: 'Zen Space', aspect: 'aspect-square' },
+    { src: '/images/gallery-5.png', alt: 'Fine Dining', aspect: 'aspect-[3/4]' },
+    { src: '/images/gallery-6.png', alt: 'Tea Ceremony', aspect: 'aspect-video' },
   ];
 
   return (
     <div className="flex flex-col min-h-screen pb-24">
-      {/* Header Space */}
-      <section className="pt-32 pb-16 text-center">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">{t('title')}</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto px-4">{t('subtitle')}</p>
-        </motion.div>
+      {/* Hero */}
+      <section className="relative h-[35vh] overflow-hidden">
+        <Image src="/images/gallery-header.png" fill alt="Gallery" className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-primary/60 flex items-center justify-center">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-[10px] tracking-[0.3em] font-sans uppercase text-secondary mb-4">{t('subtitle')}</p>
+            <h1 className="text-4xl md:text-6xl font-serif text-background">{t('title')}</h1>
+          </motion.div>
+        </div>
       </section>
 
       {/* Masonry Grid Simulation using CSS Columns */}
