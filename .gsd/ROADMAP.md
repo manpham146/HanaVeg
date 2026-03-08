@@ -26,7 +26,7 @@
 
 ### Phase 3: Dynamic Content (Menu & Blog)
 
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Objective**: Xây dựng UI cho Thực đơn (quản lý phân mục) và Blog. Fetch dữ liệu từ Supabase. Tích hợp hiệu ứng xem chi tiết mượt mà.
 **Requirements**: REQ-01, REQ-04
 
