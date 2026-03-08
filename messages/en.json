@@ -187,5 +187,12 @@
         "note": "Special Requests",
         "notePlaceholder": "Any special requests (optional)",
         "submit": "Confirm Reservation"
+    },
+    "Menu": {
+        "title": "Our Menu",
+        "subtitle": "Flavors of serenity",
+        "all": "All",
+        "soldOut": "Sold Out",
+        "empty": "No dishes available in this category yet."
     }
 }

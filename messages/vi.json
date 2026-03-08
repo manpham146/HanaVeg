@@ -187,5 +187,12 @@
         "note": "Ghi chú",
         "notePlaceholder": "Yêu cầu đặc biệt (tùy chọn)",
         "submit": "Xác nhận đặt bàn"
+    },
+    "Menu": {
+        "title": "Thực Đơn",
+        "subtitle": "Hương vị an nhiên",
+        "all": "Tất cả",
+        "soldOut": "Hết món",
+        "empty": "Chưa có món ăn nào trong danh mục này."
     }
 }

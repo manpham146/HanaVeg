@@ -28,15 +28,42 @@ export interface BookingRequest {
     note: string;
 }
 
+/** Menu category from Supabase */
+export interface MenuCategory {
+    id: string;
+    name: string;
+    name_en: string | null;
+    name_zh: string | null;
+    sort_order: number;
+    created_at: string;
+}
+
 /** Menu item from Supabase */
 export interface MenuItem {
     id: string;
     name: string;
-    description: string;
+    name_en: string | null;
+    name_zh: string | null;
+    description: string | null;
+    description_en: string | null;
+    description_zh: string | null;
     price: number;
-    image_url: string;
-    category: string;
+    image_url: string | null;
+    category_id: string | null;
     is_available: boolean;
+    sort_order: number;
+    created_at: string;
+    /** Joined category data (optional) */
+    menu_categories?: MenuCategory;
+}
+
+/** Blog category from Supabase */
+export interface BlogCategory {
+    id: string;
+    name: string;
+    name_en: string | null;
+    name_zh: string | null;
+    slug: string;
     created_at: string;
 }
 
@@ -44,12 +71,20 @@ export interface MenuItem {
 export interface BlogPost {
     id: string;
     title: string;
+    title_en: string | null;
+    title_zh: string | null;
+    subtitle: string | null;
+    subtitle_en: string | null;
+    subtitle_zh: string | null;
     slug: string;
-    excerpt: string;
-    content: string;
-    cover_image: string;
-    author: string;
-    published_at: string;
+    content: string | null;
+    content_en: string | null;
+    content_zh: string | null;
+    cover_image: string | null;
+    category_id: string | null;
+    author_id: string | null;
+    is_published: boolean;
+    published_at: string | null;
     created_at: string;
 }
 

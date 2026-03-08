@@ -187,5 +187,12 @@
         "note": "特殊要求",
         "notePlaceholder": "任何特殊要求（可选）",
         "submit": "确认预订"
+    },
+    "Menu": {
+        "title": "菜单",
+        "subtitle": "安然风味",
+        "all": "全部",
+        "soldOut": "已售罄",
+        "empty": "此分类暂无菜品。"
     }
 }
