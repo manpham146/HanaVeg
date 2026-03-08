@@ -1,43 +1,18 @@
-# DECISIONS.md
-
-## Phase 3 — Dynamic Content (Menu & Blog)
+## Phase 4 Decisions
 
 **Date:** 2026-03-08
 
-### Menu
+### Scope
 
-- Đơn vị giá: **VNĐ** (format: `125.000 ₫`)
-- Món hết: hiển thị **"Hết món"** (không ẩn)
-- Danh mục: theo spec (Khai vị, Món chính, Canh, Nước uống) — có thể mở rộng sau
-- Bố cục: chưa quyết cụ thể — sẽ quyết trong `/plan`
+- **Menu Management only for v1.0**: CRUD operations for Menu Categories and Menu Items. Content management for static pages (Home, About, etc.) is dropped for v1.0 to save time.
+- **Role Management**: Will implement 'Admin' and 'Staff' roles. Even though Staff is not strictly needed for v1.0 (since Booking/Orders are future phases), building the foundation now ensures easier scalability and proper RLS usage.
 
-### Blog
+### Approach
 
-- **Không làm cho v1** — tách sang version tương lai
-- Lưu thông tin schema để dùng sau:
-  - Nội dung: cách sống, tu tập, an nhiên, món ăn chay, phật pháp, tin tức quán
-  - Fields: ảnh bìa, title, subtitle, content, ngày đăng
-  - Người viết: Admin quyết định nội dung
-- Gen ảnh AI tạm cho blog page (không cần cầu toàn, user sẽ up sau)
+- **Chose**: Option A (Custom Route `/admin` within Next.js) using **TanStack Table**.
+- **Reason**: The Admin Panel will be used by non-technical staff eventually, making a user-friendly UI necessary. TanStack Table is highly recommended for building robust data grids (sorting, filtering, pagination) and pairs perfectly with Shadcn UI's `DataTable` component. Since the project anticipates complex tables (future orders, bookings), integrating TanStack Table now is an excellent architectural decision.
 
-### Supabase Database
+### Constraints / Technical Setup
 
-- Chưa tạo gì trên Supabase — cần tạo **toàn bộ tables** cho web database hoàn chỉnh
-- Mock data cho tất cả bảng
-- Ảnh: upload lên **Supabase Storage**
-
----
-
-## Phase 2 — Social Icons Placement
-
-**Date:** 2026-03-08
-**Decision:** Social icons (Facebook, Instagram) chỉ cần ở Footer, không cần ở Header.
-**Reason:** User xác nhận Footer đã đủ — Header giữ gọn gàng với nav + phone + language + CTA.
-
----
-
-> Kiến trúc và quyết định kỹ thuật sẽ được ghi lại ở đây (ADRs).
-
-| ID | Quyết định | Bối cảnh | Trạng thái |
-|----|------------|----------|------------|
-| 001 | Sử dụng Supabase làm Backend | Cần giải pháp full-stack nhanh chóng, quản lý Database và Auth rạch ròi. Tương lai cần hệ thống realtime cho đơn hàng. | Chấp nhận |
+- **Supabase Storage**: Will need to set up a new public bucket (e.g., `menu-images`) and handle file uploads via Supabase JS client inside the Admin Panel.
+- **Security**: Must implement Next.js Middleware to protect `/admin` routes, verifying the user's role via Supabase Auth before rendering.

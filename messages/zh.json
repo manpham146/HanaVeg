@@ -200,5 +200,11 @@
         "subtitle": "Hana 的故事",
         "comingSoonTitle": "即将推出",
         "comingSoonDesc": "Hana 博客将分享安然生活之道、素食哲学、素菜食谱，以及关于正念慈悲生活方式的感人故事。"
+    },
+    "Admin": {
+        "dashboard": "控制面板",
+        "categories": "分类管理",
+        "menuItems": "菜品管理",
+        "welcome": "欢迎进入管理面板"
     }
 }

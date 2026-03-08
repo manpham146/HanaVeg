@@ -200,5 +200,11 @@
         "subtitle": "Chia sẻ từ Hana",
         "comingSoonTitle": "Sắp Ra Mắt",
         "comingSoonDesc": "Blog của Hana sẽ chia sẻ về cách sống an nhiên, triết lý ẩm thực chay, công thức nấu ăn và những câu chuyện truyền cảm hứng về lối sống thuần thực vật."
+    },
+    "Admin": {
+        "dashboard": "Bảng điều khiển",
+        "categories": "Danh mục",
+        "menuItems": "Món ăn",
+        "welcome": "Chào mừng đến với trang quản trị"
     }
 }
