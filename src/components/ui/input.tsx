@@ -9,7 +9,7 @@ const inputVariants = cva(
     variants: {
       variant: {
         default:
-          "w-full bg-surface border border-foreground/15 rounded px-4 py-3 font-sans text-sm outline-none placeholder:text-foreground/35 focus-visible:border-secondary focus-visible:ring-1 focus-visible:ring-secondary/30 transition-all text-foreground",
+          "w-full bg-surface border border-foreground/15 rounded px-4 py-2 font-sans text-sm outline-none placeholder:text-foreground/35 focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary/30 transition-all text-foreground",
         underline:
           "border-b-2 border-foreground/30 bg-transparent pb-3 font-sans text-sm focus:border-secondary placeholder:text-foreground/40",
       },

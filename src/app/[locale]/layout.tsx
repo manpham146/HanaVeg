@@ -10,8 +10,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -43,11 +41,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`font-jost antialiased min-h-screen flex flex-col`}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
   );
 }
+
