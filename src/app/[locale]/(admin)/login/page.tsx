@@ -49,7 +49,7 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="flex items-center gap-3 mb-12">
                     <Image
-                        src="/images/logo-badge.png"
+                        src="/images/logo-icon.png"
                         alt="Hana"
                         width={40}
                         height={40}
