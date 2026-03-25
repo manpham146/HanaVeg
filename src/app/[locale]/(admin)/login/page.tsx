@@ -151,7 +151,7 @@ export default function LoginPage() {
             {/* Right: Image */}
             <div className="hidden lg:block relative">
                 <Image
-                    src="/images/section-interior-veg.png"
+                    src="/images/hana-restaurant.png"
                     alt="Hana Vegetarian Restaurant"
                     fill
                     className="object-cover"
