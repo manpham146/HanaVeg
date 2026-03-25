@@ -45,7 +45,7 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen grid lg:grid-cols-2">
             {/* Left: Form */}
-            <div className="flex flex-col justify-center px-6 py-12 lg:px-16 xl:px-24">
+            <div className="flex flex-col items-center justify-center px-6 py-12 lg:px-16 xl:px-24">
                 {/* Logo */}
                 <div className="flex items-center gap-4 mb-10">
                     <Image
