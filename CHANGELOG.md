@@ -2,6 +2,35 @@
 
 Tất cả thay đổi đáng chú ý của dự án HanaVeg sẽ được ghi nhận trong file này.
 
+## [Unreleased] - 2026-03-26
+
+### ✨ Tính năng mới
+
+- **Login Page Redesign**: Split-layout mới — form bên trái (centered), hình nhà hàng bên phải với gradient overlay
+- **Custom Logo Badge**: Logo tròn vàng (`hana-badge.png`) — viền vàng, nền `#0f1f15`, hoa sen + text, transparent background, anti-aliased edges
+- **Forgot Password Page**: Redesign theo split-layout thống nhất với login
+- **Branding đa ngôn ngữ**: Hiển thị tên nhà hàng theo locale (VI: Nhà hàng chay Hana, EN: Hana Vegetarian, ZH: Hana素食餐厅)
+
+### 🔒 Bảo mật
+
+- **Xóa trang Register public**: Tài khoản chỉ được tạo bởi Admin (qua Supabase Dashboard hoặc Staff Management tương lai)
+- Bỏ link "Đăng ký" trên trang login
+
+### 🎨 Giao diện
+
+- **Logo 80px** với brand text 24px bold + subtitle "Admin Panel"
+- **Form centered** trong left panel, logo canh trái cùng hàng với form fields
+- **Gold button** (`#D4A100`) thống nhất trên tất cả auth pages
+- **Password visibility toggle** (Eye/EyeOff icon)
+
+### 🛠️ Cải tiến kỹ thuật
+
+- **Supabase image hostname**: Thêm `njmzamjrwgbqtsjpqguz.supabase.co` vào `next.config.ts` remote patterns
+- **Logo processing**: Python PIL flood-fill + Gaussian blur alpha channel cho smooth edges
+- Thống nhất dùng `hana-badge.png` thay `logo-transparent.png` toàn project
+
+---
+
 ## [Unreleased] - 2026-03-12
 
 ### ✨ Tính năng mới

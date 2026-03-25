@@ -16,3 +16,13 @@
 
 - **Supabase Storage**: Will need to set up a new public bucket (e.g., `menu-images`) and handle file uploads via Supabase JS client inside the Admin Panel.
 - **Security**: Must implement Next.js Middleware to protect `/admin` routes, verifying the user's role via Supabase Auth before rendering.
+
+## Auth & Registration Decisions
+
+**Date:** 2026-03-26
+
+### Registration Model
+
+- **Chose**: Admin-only account creation (no public registration)
+- **Reason**: Nhà hàng chỉ cần một số ít tài khoản admin/staff. Tự đăng ký không cần thiết và là rủi ro bảo mật. Admin tạo tài khoản qua Supabase Dashboard, tương lai sẽ có Staff Management page (Phase 9).
+- **Impact**: Xóa route `/register`, bỏ link "Đăng ký" trên login page.
