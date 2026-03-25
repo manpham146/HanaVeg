@@ -40,8 +40,9 @@ export function ImageUpload({
                 .getPublicUrl(filePath);
 
             onUploadSuccess(data.publicUrl);
-        } catch (error: any) {
-            alert(error.message);
+        } catch (error: unknown) {
+            const message = error instanceof Error ? error.message : 'Upload failed';
+            alert(message);
         } finally {
             setUploading(false);
         }

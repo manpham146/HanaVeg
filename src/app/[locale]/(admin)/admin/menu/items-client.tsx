@@ -38,9 +38,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Pencil, Trash2, Plus, Search } from "lucide-react";
+import { Pencil, Trash2, Plus, Search, Sparkles, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ImageUpload } from "@/components/admin/ImageUpload";
+import { translateSingle } from "@/lib/actions/translate";
 
 export default function ItemsClient({
   initialItems,
@@ -101,6 +102,97 @@ export default function ItemsClient({
     setIsEdit(false);
   };
 
+  const [translatingNameVi, setTranslatingNameVi] = useState(false);
+  const [translatingNameEn, setTranslatingNameEn] = useState(false);
+  const [translatingNameZh, setTranslatingNameZh] = useState(false);
+  const [translatingDescVi, setTranslatingDescVi] = useState(false);
+  const [translatingDescEn, setTranslatingDescEn] = useState(false);
+  const [translatingDescZh, setTranslatingDescZh] = useState(false);
+
+  const handleTranslateNameVi = async () => {
+    if (!formData.name.trim()) return;
+    setTranslatingNameVi(true);
+    try {
+      const [en, zh] = await Promise.all([
+        translateSingle(formData.name, "en", "vi"),
+        translateSingle(formData.name, "zh-CN", "vi"),
+      ]);
+      setFormData((prev) => ({ ...prev, name_en: en, name_zh: zh }));
+    } finally {
+      setTranslatingNameVi(false);
+    }
+  };
+
+  const handleTranslateNameEn = async () => {
+    if (!formData.name_en.trim()) return;
+    setTranslatingNameEn(true);
+    try {
+      const [vi, zh] = await Promise.all([
+        translateSingle(formData.name_en, "vi", "en"),
+        translateSingle(formData.name_en, "zh-CN", "en"),
+      ]);
+      setFormData((prev) => ({ ...prev, name: vi, name_zh: zh }));
+    } finally {
+      setTranslatingNameEn(false);
+    }
+  };
+
+  const handleTranslateNameZh = async () => {
+    if (!formData.name_zh.trim()) return;
+    setTranslatingNameZh(true);
+    try {
+      const [vi, en] = await Promise.all([
+        translateSingle(formData.name_zh, "vi", "zh-CN"),
+        translateSingle(formData.name_zh, "en", "zh-CN"),
+      ]);
+      setFormData((prev) => ({ ...prev, name: vi, name_en: en }));
+    } finally {
+      setTranslatingNameZh(false);
+    }
+  };
+
+  const handleTranslateDescVi = async () => {
+    if (!formData.description.trim()) return;
+    setTranslatingDescVi(true);
+    try {
+      const [en, zh] = await Promise.all([
+        translateSingle(formData.description, "en", "vi"),
+        translateSingle(formData.description, "zh-CN", "vi"),
+      ]);
+      setFormData((prev) => ({ ...prev, description_en: en, description_zh: zh }));
+    } finally {
+      setTranslatingDescVi(false);
+    }
+  };
+
+  const handleTranslateDescEn = async () => {
+    if (!formData.description_en.trim()) return;
+    setTranslatingDescEn(true);
+    try {
+      const [vi, zh] = await Promise.all([
+        translateSingle(formData.description_en, "vi", "en"),
+        translateSingle(formData.description_en, "zh-CN", "en"),
+      ]);
+      setFormData((prev) => ({ ...prev, description: vi, description_zh: zh }));
+    } finally {
+      setTranslatingDescEn(false);
+    }
+  };
+
+  const handleTranslateDescZh = async () => {
+    if (!formData.description_zh.trim()) return;
+    setTranslatingDescZh(true);
+    try {
+      const [vi, en] = await Promise.all([
+        translateSingle(formData.description_zh, "vi", "zh-CN"),
+        translateSingle(formData.description_zh, "en", "zh-CN"),
+      ]);
+      setFormData((prev) => ({ ...prev, description: vi, description_en: en }));
+    } finally {
+      setTranslatingDescZh(false);
+    }
+  };
+
   const handleOpen = (item?: MenuItem) => {
     if (item) {
       setFormData({
@@ -126,11 +218,16 @@ export default function ItemsClient({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const payload = {
+      ...formData,
+      price: Number(formData.price) || 0,
+      sort_order: Number(formData.sort_order) || 0,
+    };
     let res;
     if (isEdit && currentId) {
-      res = await updateMenuItem(currentId, formData);
+      res = await updateMenuItem(currentId, payload);
     } else {
-      res = await createMenuItem(formData);
+      res = await createMenuItem(payload);
     }
     if (res.error) {
       alert(res.error);
@@ -341,15 +438,33 @@ export default function ItemsClient({
           <div className="flex-1 overflow-y-auto px-6">
             <div className="space-y-5">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium">{t("nameVi")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name" className="text-sm font-medium">{t("nameVi")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateNameVi} disabled={translatingNameVi || !formData.name.trim()}>
+                    {translatingNameVi ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingNameVi ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder={t("nameViPlaceholder")} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="name_en" className="text-sm font-medium">{t("nameEn")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name_en" className="text-sm font-medium">{t("nameEn")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateNameEn} disabled={translatingNameEn || !formData.name_en.trim()}>
+                    {translatingNameEn ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingNameEn ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name_en" value={formData.name_en} onChange={(e) => setFormData({ ...formData, name_en: e.target.value })} placeholder={t("nameEnPlaceholder")} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="name_zh" className="text-sm font-medium">{t("nameZh")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name_zh" className="text-sm font-medium">{t("nameZh")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateNameZh} disabled={translatingNameZh || !formData.name_zh.trim()}>
+                    {translatingNameZh ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingNameZh ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name_zh" value={formData.name_zh} onChange={(e) => setFormData({ ...formData, name_zh: e.target.value })} placeholder={t("nameZhPlaceholder")} />
               </div>
               <div className="space-y-2">
@@ -391,15 +506,33 @@ export default function ItemsClient({
                 <Label htmlFor="is_available" className="text-sm font-medium">{t("available")}</Label>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="desc" className="text-sm font-medium">{t("descVi")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="desc" className="text-sm font-medium">{t("descVi")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateDescVi} disabled={translatingDescVi || !formData.description.trim()}>
+                    {translatingDescVi ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingDescVi ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Textarea id="desc" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} placeholder={t("descViPlaceholder")} className="min-h-[70px]" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="desc_en" className="text-sm font-medium">{t("descEn")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="desc_en" className="text-sm font-medium">{t("descEn")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateDescEn} disabled={translatingDescEn || !formData.description_en.trim()}>
+                    {translatingDescEn ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingDescEn ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Textarea id="desc_en" value={formData.description_en} onChange={(e) => setFormData({ ...formData, description_en: e.target.value })} placeholder={t("descEnPlaceholder")} className="min-h-[70px]" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="desc_zh" className="text-sm font-medium">{t("descZh")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="desc_zh" className="text-sm font-medium">{t("descZh")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateDescZh} disabled={translatingDescZh || !formData.description_zh.trim()}>
+                    {translatingDescZh ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingDescZh ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Textarea id="desc_zh" value={formData.description_zh} onChange={(e) => setFormData({ ...formData, description_zh: e.target.value })} placeholder={t("descZhPlaceholder")} className="min-h-[70px]" />
               </div>
             </div>

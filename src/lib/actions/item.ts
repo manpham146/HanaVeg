@@ -3,7 +3,21 @@
 import { createClient } from '@/utils/supabase/server';
 import { revalidatePath } from 'next/cache';
 
-export async function createMenuItem(data: Record<string, any>) {
+interface MenuItemInput {
+    name: string;
+    name_en?: string | null;
+    name_zh?: string | null;
+    description?: string | null;
+    description_en?: string | null;
+    description_zh?: string | null;
+    price?: number;
+    image_url?: string | null;
+    category_id?: string | null;
+    is_available?: boolean;
+    sort_order?: number;
+}
+
+export async function createMenuItem(data: MenuItemInput) {
     const supabase = await createClient();
 
     const { data: { user } } = await supabase.auth.getUser();
@@ -46,7 +60,7 @@ export async function createMenuItem(data: Record<string, any>) {
     return { success: true };
 }
 
-export async function updateMenuItem(id: string, data: Record<string, any>) {
+export async function updateMenuItem(id: string, data: MenuItemInput) {
     const supabase = await createClient();
 
     const { data: { user } } = await supabase.auth.getUser();
