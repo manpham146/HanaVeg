@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { Loader2, Eye, EyeOff, Leaf } from "lucide-react";
+import { Loader2, Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -47,12 +47,20 @@ export default function LoginPage() {
             {/* Left: Form */}
             <div className="flex flex-col justify-center px-6 py-12 lg:px-16 xl:px-24">
                 {/* Logo */}
-                <div className="flex items-center gap-2 mb-12">
-                    <div className="flex items-center justify-center w-9 h-9 rounded-md bg-[#0B1C10]">
-                        <Leaf className="h-5 w-5 text-[#D4A100]" />
-                    </div>
+                <div className="flex items-center gap-3 mb-12">
+                    <Image
+                        src="/images/logo-icon.png"
+                        alt="Hana"
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                    />
                     <span className="text-lg font-semibold tracking-tight text-[#0B1C10]">
-                        Hana
+                        {locale === "vi"
+                            ? "Nhà hàng chay Hana"
+                            : locale === "zh"
+                              ? "Hana素食餐厅"
+                              : "Hana Vegetarian"}
                     </span>
                 </div>
 
