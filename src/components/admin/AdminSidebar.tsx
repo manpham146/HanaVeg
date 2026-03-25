@@ -107,7 +107,7 @@ export function AdminSidebar({ userEmail, userRole }: AdminSidebarProps) {
       <SidebarHeader className="border-b border-sidebar-border px-4 py-3">
         <Link href={`/${locale}/admin`} className="flex items-center gap-2">
           <Image
-            src="/images/logo-transparent.png"
+            src="/images/logo-icon.png"
             alt="Hana"
             width={48}
             height={48}

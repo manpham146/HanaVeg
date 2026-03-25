@@ -45,7 +45,7 @@ export default function Header() {
 
         {/* Center: Logo */}
         <Link href="/" className="flex items-center justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-          <Image src="/images/logo-transparent.png" alt="Hana Vegetarian" width={160} height={160} className="h-14 md:h-20 w-auto" priority />
+          <Image src="/images/logo-icon.png" alt="Hana Vegetarian" width={160} height={160} className="h-14 md:h-20 w-auto" priority />
         </Link>
 
         {/* Right: Actions */}

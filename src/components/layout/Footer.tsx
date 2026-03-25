@@ -17,7 +17,7 @@ export default function Footer() {
 
           {/* Col 1: Brand */}
           <div className="flex flex-col items-start">
-            <Image src="/images/logo-transparent.png" alt="Hana Vegetarian" width={140} height={140} className="h-24 w-auto mb-4" />
+            <Image src="/images/logo-icon.png" alt="Hana Vegetarian" width={140} height={140} className="h-24 w-auto mb-4" />
             <p className="text-sm opacity-60 font-sans leading-relaxed">{t('brandDesc')}</p>
             <div className="flex items-center gap-4 mt-6">
               <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-background/50 hover:text-secondary transition-colors">
