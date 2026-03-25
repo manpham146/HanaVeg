@@ -219,6 +219,8 @@
         "inStock": "在售中",
         "outOfStock": "已售罄",
         "noResults": "未找到结果",
+        "autoTranslate": "自动翻译",
+        "translating": "翻译中...",
         "all": "全部",
         "filterByStatus": "按状态筛选",
         "close": "关闭",

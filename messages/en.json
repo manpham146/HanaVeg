@@ -219,6 +219,8 @@
         "inStock": "In Stock",
         "outOfStock": "Out of Stock",
         "noResults": "No results found",
+        "autoTranslate": "Auto translate",
+        "translating": "Translating...",
         "all": "All",
         "filterByStatus": "Filter by status",
         "close": "Close",

@@ -147,15 +147,7 @@ export default function LoginPage() {
                         </Button>
                     </form>
 
-                    <p className="mt-6 text-center text-sm text-muted-foreground">
-                        {t("noAccount")}{" "}
-                        <Link
-                            href={`/${locale}/register`}
-                            className="font-medium text-[#D4A100] hover:text-[#C09300] transition-colors"
-                        >
-                            {t("register")}
-                        </Link>
-                    </p>
+
                 </div>
             </div>
 

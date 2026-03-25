@@ -45,40 +45,45 @@ Trước khi tạo bất kỳ UI element nào (`button`, `input`, `select`...), 
 
 ### Inventory — Components Hiện có trong `src/components/ui/`
 
-| Component | File | Import |
-|-----------|------|--------|
-| Button | `button.tsx` | `import { Button } from '@/components/ui/button'` |
-| Input | `input.tsx` | `import { Input } from '@/components/ui/input'` |
-| Textarea | `textarea.tsx` | `import { Textarea } from '@/components/ui/textarea'` |
-| Label | `label.tsx` | `import { Label } from '@/components/ui/label'` |
-| Select | `select.tsx` | `import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select'` |
+| Component | File | Ghi chú |
+|-----------|------|---------|
+| Button | `button.tsx` | variants: default, secondary, outline, ghost, ghost-nav, zen, link, destructive |
+| Input | `input.tsx` | variants: default, underline |
+| Textarea | `textarea.tsx` | |
+| Label | `label.tsx` | variants: default, field |
+| Select | `select.tsx` | Radix Portal — popup không kế thừa CSS parent |
+| AlertDialog | `alert-dialog.tsx` | Hỗ trợ `size="sm"`, `AlertDialogMedia`, `variant` trên Action/Cancel |
+| Sheet | `sheet.tsx` | Dùng cho form tạo/sửa trong admin |
+| Badge | `badge.tsx` | |
+| Checkbox | `checkbox.tsx` | |
+| Table | `table.tsx` | |
+| Card | `card.tsx` | |
+| Sidebar | `sidebar.tsx` | `SidebarProvider`, `SidebarInset`, `SidebarMenu`, `SidebarRail` |
+| Avatar | `avatar.tsx` | |
+| Breadcrumb | `breadcrumb.tsx` | |
+| DropdownMenu | `dropdown-menu.tsx` | |
+| Separator | `separator.tsx` | |
+| Skeleton | `skeleton.tsx` | |
+| Tooltip | `tooltip.tsx` | |
+| Popover | `popover.tsx` | |
+| Drawer | `drawer.tsx` | |
 
-### Variants Hiện có
+### Admin Theme — Bộ theme riêng biệt
 
-**Button:**
+Trang admin dùng **theme khác hoàn toàn** với trang restaurant:
 
-- `default` — nền primary
-- `secondary` — nền secondary
-- `outline` — viền
-- `ghost` — trong suốt
-- `ghost-nav` — dùng trong Header/Nav (không có ring)
-- `zen` — CTA vàng `bg-secondary`, `rounded-none`, `tracking-widest`
-- `link` — text link
+- **Font:** Inter (wrap trong `.font-inter` class) — thay vì Playfair Display / Jost.
+- **CSS Override:** `.font-inter` selector trong `globals.css` ghi đè toàn bộ CSS variables:
+  - Background: `#FFFFFF` (trắng, không cream)
+  - Primary: `#D4A100` (Gold)
+  - Foreground: `#0f172a` (slate-900)
+  - Border-radius: `0.5rem`
+- **Sidebar Dark:** bg `#0B1C10`, text `#e8e8e0`, accent `#142a1a`, primary `#D4A100`.
+- **Layout:** `(admin)/admin/layout.tsx` → `SidebarProvider` + `SidebarInset` + `AdminBreadcrumb`.
+- **Auth:** Server-side check `supabase.auth.getUser()` + role `admin` từ bảng `profiles`.
+- **Components Admin riêng:** `AdminSidebar.tsx`, `AdminBreadcrumb.tsx` trong `src/components/admin/`.
 
-**Input:**
-
-- `default` — form field đầy đủ (bg-surface, viền, focus ring)
-- `underline` — chỉ gạch chân (dùng cho Newsletter)
-
-**Label:**
-
-- `default` — label thường
-- `field` — uppercase gold dùng trong form (tracking-widest, text-secondary)
-
-### Lưu ý Quan trọng về Context
-
-Shadcn Select dùng Radix Portal — popup **không kế thừa CSS** từ parent.
-Với element nằm trong header dark (`bg-primary`), dùng native `<select>` hoặc thêm màu tường minh vào SelectContent.
+> **QUY TẮC:** Khi code admin, KHÔNG custom inline style. Dùng shadcn component props chuẩn (`variant`, `size`).
 
 ### API-First
 
@@ -123,15 +128,27 @@ Với element nằm trong header dark (`bg-primary`), dùng native `<select>` ho
 
 ```
 src/
-├── app/[locale]/        # Pages (App Router + i18n)
-├── components/          # UI Components (tái sử dụng)
+├── app/[locale]/
+│   ├── (restaurant)/    # Trang khách (page, menu, booking, blog...)
+│   ├── (admin)/
+│   │   ├── layout.tsx   # font-inter wrapper
+│   │   ├── admin/
+│   │   │   ├── layout.tsx   # SidebarProvider + Auth Guard
+│   │   │   ├── page.tsx     # Dashboard
+│   │   │   ├── menu/        # CRUD Món ăn
+│   │   │   └── categories/  # CRUD Danh mục
+│   │   └── login/       # Admin login
+│   └── layout.tsx       # Root layout (fonts, theme)
+├── components/
 │   ├── ui/              # Shadcn UI components
+│   ├── admin/           # AdminSidebar, AdminBreadcrumb
 │   └── layout/          # Header, Footer, Navigation
-├── lib/                 # API services, utilities
+├── lib/
+│   └── actions/         # Server Actions (item, category)
 ├── types/               # TypeScript types/interfaces
 ├── stores/              # Zustand stores
 ├── i18n/                # i18n configuration
-└── utils/               # Helper functions
+└── utils/               # Supabase client/server helpers
 ```
 
 ## 5. Quy trình Làm việc

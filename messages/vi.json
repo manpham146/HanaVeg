@@ -219,6 +219,8 @@
         "inStock": "Còn hàng",
         "outOfStock": "Hết hàng",
         "noResults": "Không tìm thấy kết quả",
+        "autoTranslate": "Tự động dịch",
+        "translating": "Đang dịch...",
         "all": "Tất cả",
         "filterByStatus": "Lọc theo trạng thái",
         "close": "Đóng",

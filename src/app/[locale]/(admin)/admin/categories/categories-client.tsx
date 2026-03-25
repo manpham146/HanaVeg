@@ -17,8 +17,9 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Pencil, Trash2, Plus, Search } from "lucide-react";
+import { Pencil, Trash2, Plus, Search, Sparkles, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { translateSingle } from "@/lib/actions/translate";
 
 export default function CategoriesClient({ initialCategories }: { initialCategories: MenuCategory[] }) {
   const t = useTranslations("Admin");
@@ -47,10 +48,56 @@ export default function CategoriesClient({ initialCategories }: { initialCategor
     sort_order: "0",
   });
 
+  const [translatingVi, setTranslatingVi] = useState(false);
+  const [translatingEn, setTranslatingEn] = useState(false);
+  const [translatingZh, setTranslatingZh] = useState(false);
+
   const resetForm = () => {
     setFormData({ name: "", name_en: "", name_zh: "", sort_order: "0" });
     setCurrentId(null);
     setIsEdit(false);
+  };
+
+  const handleTranslateVi = async () => {
+    if (!formData.name.trim()) return;
+    setTranslatingVi(true);
+    try {
+      const [en, zh] = await Promise.all([
+        translateSingle(formData.name, "en", "vi"),
+        translateSingle(formData.name, "zh-CN", "vi"),
+      ]);
+      setFormData((prev) => ({ ...prev, name_en: en, name_zh: zh }));
+    } finally {
+      setTranslatingVi(false);
+    }
+  };
+
+  const handleTranslateEn = async () => {
+    if (!formData.name_en.trim()) return;
+    setTranslatingEn(true);
+    try {
+      const [vi, zh] = await Promise.all([
+        translateSingle(formData.name_en, "vi", "en"),
+        translateSingle(formData.name_en, "zh-CN", "en"),
+      ]);
+      setFormData((prev) => ({ ...prev, name: vi, name_zh: zh }));
+    } finally {
+      setTranslatingEn(false);
+    }
+  };
+
+  const handleTranslateZh = async () => {
+    if (!formData.name_zh.trim()) return;
+    setTranslatingZh(true);
+    try {
+      const [vi, en] = await Promise.all([
+        translateSingle(formData.name_zh, "vi", "zh-CN"),
+        translateSingle(formData.name_zh, "en", "zh-CN"),
+      ]);
+      setFormData((prev) => ({ ...prev, name: vi, name_en: en }));
+    } finally {
+      setTranslatingZh(false);
+    }
   };
 
   const handleOpen = (category?: MenuCategory) => {
@@ -214,15 +261,33 @@ export default function CategoriesClient({ initialCategories }: { initialCategor
           <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto px-6">
             <div className="space-y-5">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium">{t("nameVi")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name" className="text-sm font-medium">{t("nameVi")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateVi} disabled={translatingVi || !formData.name.trim()}>
+                    {translatingVi ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingVi ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required placeholder={t("nameViPlaceholder")} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="name_en" className="text-sm font-medium">{t("nameEn")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name_en" className="text-sm font-medium">{t("nameEn")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateEn} disabled={translatingEn || !formData.name_en.trim()}>
+                    {translatingEn ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingEn ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name_en" value={formData.name_en} onChange={(e) => setFormData({ ...formData, name_en: e.target.value })} placeholder={t("nameEnPlaceholder")} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="name_zh" className="text-sm font-medium">{t("nameZh")}</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="name_zh" className="text-sm font-medium">{t("nameZh")}</Label>
+                  <Button type="button" variant="ghost" size="sm" className="h-7 text-xs gap-1 text-primary/70 hover:text-primary" onClick={handleTranslateZh} disabled={translatingZh || !formData.name_zh.trim()}>
+                    {translatingZh ? <Loader2 className="h-3 w-3 animate-spin" /> : <Sparkles className="h-3 w-3" />}
+                    {translatingZh ? t("translating") : t("autoTranslate")}
+                  </Button>
+                </div>
                 <Input id="name_zh" value={formData.name_zh} onChange={(e) => setFormData({ ...formData, name_zh: e.target.value })} placeholder={t("nameZhPlaceholder")} />
               </div>
               <div className="space-y-2">

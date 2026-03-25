@@ -33,7 +33,7 @@
 ### Phase 4: Admin Panel (Trang Quản trị)
 
 **Status**: ✅ Complete
-**Objective**: Xây dựng trang nội bộ phân quyền Admin và Staff. Thêm chức năng CRUD cho Thực đơn, CRUD nội dung hiển thị ở các trang (nếu cần), kiểm soát nhân viên.
+**Objective**: Xây dựng trang nội bộ phân quyền Admin và Staff. Thêm chức năng CRUD cho Thực đơn, CRUD nội dung hiển thị ở các trang (nếu cần).
 **Requirements**: REQ-06
 **Dependencies**: Phase 3 (Database setup)
 
@@ -65,3 +65,9 @@
 **Phase 8: Order Online (Đặt món Trực tuyến)**
 
 - **Objective**: Xây dựng trang Order Online cho phép khách hàng duyệt thực đơn, thêm món vào giỏ hàng (cart), chọn hình thức (Dine-in / Takeaway / Delivery). Lưu đơn vào Supabase (orders + order_items), hiển thị trạng thái đơn. i18n 3 ngôn ngữ, responsive mobile-first.
+
+### Version 5.0
+
+**Phase 9: Staff Management (Quản lý Nhân viên)**
+
+- **Objective**: Xây dựng trang quản lý nhân viên cho Admin — danh sách nhân viên, phân quyền (Admin/Staff), thêm/sửa/xóa tài khoản nhân viên, gán vai trò. Tích hợp Supabase Auth + profiles table, i18n 3 ngôn ngữ.
