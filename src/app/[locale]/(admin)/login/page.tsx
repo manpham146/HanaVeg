@@ -47,21 +47,24 @@ export default function LoginPage() {
             {/* Left: Form */}
             <div className="flex flex-col justify-center px-6 py-12 lg:px-16 xl:px-24">
                 {/* Logo */}
-                <div className="flex items-center gap-3 mb-12">
+                <div className="flex items-center gap-4 mb-10">
                     <Image
-                        src="/images/logo-icon.png"
+                        src="/images/hana-badge.png"
                         alt="Hana"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className=""
                     />
-                    <span className="text-lg font-semibold tracking-tight text-[#0B1C10]">
-                        {locale === "vi"
-                            ? "Nhà hàng chay Hana"
-                            : locale === "zh"
-                              ? "Hana素食餐厅"
-                              : "Hana Vegetarian"}
-                    </span>
+                    <div className="flex flex-col">
+                        <span className="text-2xl font-bold tracking-tight text-[#0B1C10]">
+                            {locale === "vi"
+                                ? "Nhà hàng chay Hana"
+                                : locale === "zh"
+                                  ? "Hana素食餐厅"
+                                  : "Hana Vegetarian"}
+                        </span>
+                        <span className="text-sm text-muted-foreground">Admin Panel</span>
+                    </div>
                 </div>
 
                 {/* Form content */}
