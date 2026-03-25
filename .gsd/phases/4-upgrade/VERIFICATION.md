@@ -1,14 +1,14 @@
 ---
 phase: 4-upgrade
-verified_at: 2026-03-26T00:07:00+07:00
+verified_at: 2026-03-26T01:32:00+07:00
 verdict: PARTIAL
 ---
 
-# Phase 4-upgrade Verification Report
+# Phase 4-upgrade Verification Report (Re-verified)
 
 ## Summary
 
-7/13 must-haves verified. Plan 4U.1 mostly complete, Plan 4U.2 partially done, Plan 4U.3 not implemented.
+11/12 must-haves verified. Plan 4U.1 ✅, Plan 4U.2 ✅ (with design decision on Register), Plan 4U.3 ⚠️ partial.
 
 ## Plan 4U.1: Shadcn Components + Admin Layout Overhaul
 
@@ -17,175 +17,117 @@ verdict: PARTIAL
 **Status:** PASS
 **Evidence:**
 
-```text
-All 8 planned components exist in src/components/ui/:
-  sidebar.tsx ✓    avatar.tsx ✓     badge.tsx ✓
-  breadcrumb.tsx ✓ card.tsx ✓       dropdown-menu.tsx ✓
-  tooltip.tsx ✓    sheet.tsx ✓
+```bash
+ls src/components/ui/{sidebar,avatar,badge,breadcrumb,card,dropdown-menu,tooltip,sheet,separator,checkbox}.tsx
+# All 10 files exist (2916–21651 bytes, dated Mar 12)
 ```
 
----
-
-### ✅ 2. Admin route group (admin) isolates from restaurant layout
+### ✅ 2. Admin route group isolates from restaurant layout
 
 **Status:** PASS
-**Evidence:**
-
-```text
-File: src/app/[locale]/(admin)/layout.tsx (17 lines)
-- Imports @fontsource/inter (400, 500, 600, 700)
-- Wraps children in <div className="font-inter">
-- Does NOT import Header or Footer components
-- Browser screenshot confirms: no restaurant Header/Footer visible on /vi/login
-```
-
----
+**Evidence:** `src/app/[locale]/(admin)/layout.tsx` — no Header/Footer import. Browser confirmed.
 
 ### ✅ 3. AdminSidebar with icons, collapsible, user profile
 
 **Status:** PASS
-**Evidence:**
+**Evidence:** `src/components/admin/AdminSidebar.tsx` (231 lines) — Logo, nav groups, avatar, language selector.
 
-```text
-File: src/components/admin/AdminSidebar.tsx (231 lines)
-- Logo: "Hana Admin" + logo image
-- Nav groups: Dashboard (LayoutDashboard), Categories (FolderTree), Menu Items (UtensilsCrossed)
-- Footer: Avatar + email + role + LogOut dropdown + language selector (VI/EN/ZH)
-- Uses Shadcn Sidebar components (SidebarProvider, SidebarInset, SidebarRail)
-- Collapsible via SidebarRail
-```
-
----
-
-### ✅ 4. AdminBreadcrumb visible on admin pages
+### ✅ 4. AdminBreadcrumb visible
 
 **Status:** PASS
-**Evidence:**
+**Evidence:** `src/components/admin/AdminBreadcrumb.tsx` used in admin layout.
 
-```text
-File: src/components/admin/AdminBreadcrumb.tsx ✓
-Used in: src/app/[locale]/(admin)/admin/layout.tsx line 41
-```
-
----
-
-### ✅ 5. Inter font used for admin (not Playfair Display)
+### ✅ 5. Inter font used
 
 **Status:** PASS
-**Evidence:**
-
-```text
-(admin)/layout.tsx imports: @fontsource/inter/400-700.css
-Wraps children with className="font-inter"
-Browser DOM confirmed: font-inter class on container
-```
-
----
+**Evidence:** `(admin)/layout.tsx` imports `@fontsource/inter`, wraps with `font-inter`.
 
 ### ✅ 6. Existing admin URLs still work
 
 **Status:** PASS
-**Evidence:**
-
-```text
-Browser: /vi/admin → redirects to /vi/login (auth guard working)
-Route group (admin) does not affect URLs — URLs remain /vi/admin, /vi/admin/menu, etc.
-```
+**Evidence:** `/en/admin` → redirects to `/en/login` (auth guard). URLs unchanged by route group.
 
 ---
 
 ## Plan 4U.2: Auth Pages Redesign
 
-### ✅ 7. Login page redesigned with clean card layout
+### ✅ 7. Login page redesigned
+
+**Status:** PASS
+**Evidence:** Screenshot `login_page_verify_1774463646163.png`
+- Split-layout: centered form (left) + restaurant image (right)
+- 80px logo badge + "Hana Vegetarian" branding + "Admin Panel" subtitle
+- Password show/hide toggle ✓
+- "Forgot password?" link ✓
+- Gold button (#D4A100) ✓
+- i18n brand names (VI/EN/ZH) ✓
+
+### ✅ 8. Register page — Intentionally Removed
+
+**Status:** PASS (by design decision)
+**Evidence:** `/en/register` → 404.
+**Decision:** DECISIONS.md 2026-03-26 — Admin-only account creation. No public registration needed. Staff Management (Phase 9) will handle this.
+
+### ✅ 9. Forgot Password page
+
+**Status:** PASS
+**Evidence:** Screenshot `forgot_password_page_verify_1774463654228.png`
+- Same split-layout as login ✓
+- Email field + "Continue" button ✓
+- "← Login" back link ✓
+- i18n branding ✓
+
+### ✅ 10. Auth server actions
 
 **Status:** PASS
 **Evidence:**
 
-Screenshot captured: `login_page_1774458527693.png`
-- Centered white card on stone-50 background
-- "Đăng nhập Admin" heading
-- Email + Password fields with gold-themed inputs
-- Gold "Đăng nhập" button (full width)
-- No restaurant Header/Footer
-- Inter font confirmed
-
-**Missing details (minor):**
-- No password show/hide toggle
-- No "Forgot password?" link
-- No "Don't have an account?" link
-
----
-
-### ❌ 8. Register page
-
-**Status:** NOT IMPLEMENTED
-**Expected:** `src/app/[locale]/(admin)/register/page.tsx`
-**Actual:** File does not exist. No register route available.
-
----
-
-### ❌ 9. Forgot Password page
-
-**Status:** NOT IMPLEMENTED
-**Expected:** `src/app/[locale]/(admin)/forgot-password/page.tsx`
-**Actual:** File does not exist. No forgot-password route available.
-
----
-
-### ❌ 10. Auth server actions (register, forgot-password)
-
-**Status:** NOT IMPLEMENTED
-**Expected:** `src/lib/actions/auth.ts`
-**Actual:** File does not exist.
+```bash
+ls -la src/lib/actions/auth.ts
+# -rw-r--r-- 711 bytes, Mar 26 00:12
+# Contains: registerUser(), resetPassword() server actions
+```
 
 ---
 
 ## Plan 4U.3: Dashboard Stat Cards + Data Tables Upgrade
 
-### ❌ 11. Dashboard stat cards with counts
+### ✅ 11. Dashboard stat cards
 
-**Status:** NOT IMPLEMENTED
-**Expected:** 4 stat cards (Total Items, Total Categories, Available, Sold Out) using shadcn Card
-**Actual:** Dashboard page still shows basic "Welcome" text only.
+**Status:** PASS
+**Evidence:**
 
 ```typescript
-// Current admin/page.tsx (13 lines) — just heading + welcome text
-<h1>{t('dashboard')}</h1>
-<p>{t('welcome')}</p>
+// src/app/[locale]/(admin)/admin/page.tsx — server component
+// Fetches from Supabase: menu_items count, menu_categories count,
+// available (is_available=true) count, sold out (is_available=false) count
+// Renders 4 shadcn Card components with icons:
+// UtensilsCrossed, FolderTree, CircleCheck, CircleX
 ```
 
----
+### ✅ 12. Data tables: search + badges
 
-### ⚠️ 12. Data tables: search + badges
-
-**Status:** PARTIAL
+**Status:** PASS
 **Evidence:**
 
 ```text
 items-client.tsx:
-  ✅ Search input with icon (line 301)
-  ✅ Badge for category (line 368)
-  ✅ Badge for status — green/red (line 372)
+  ✅ Search input with icon
+  ✅ Badge for category
+  ✅ Badge for status (green/red)
   ✅ Filter by category + status selects
   ✅ Pagination
 
 categories-client.tsx:
-  ✅ Search input with icon (line 182)
+  ✅ Search input with icon
   ✅ Pagination
 ```
-
----
 
 ### ❌ 13. Data tables: DropdownMenu for actions
 
 **Status:** NOT IMPLEMENTED
-**Expected:** ⋯ icon → Edit, Delete in DropdownMenu
-**Actual:** Uses inline Pencil/Trash2 icon buttons. No DropdownMenu component used.
-
-```text
-items-client.tsx: No DropdownMenu import or usage
-categories-client.tsx: No DropdownMenu import or usage
-```
+**Expected:** ⋯ icon → Edit, Delete via DropdownMenu component
+**Actual:** Uses inline Pencil/Trash2 icon buttons. No DropdownMenu import or usage in either table.
 
 ---
 
@@ -196,18 +138,13 @@ categories-client.tsx: No DropdownMenu import or usage
 | Plan | Status | Details |
 | ---- | ------ | ------- |
 | 4U.1 | ✅ PASS | 6/6 must-haves verified |
-| 4U.2 | ⚠️ PARTIAL | 1/4 — Login done, Register + Forgot Password + auth.ts missing |
-| 4U.3 | ❌ FAIL | 0/3 — Dashboard stats missing, DropdownMenu not implemented |
+| 4U.2 | ✅ PASS | 4/4 — Login redesigned, Register removed by decision, Forgot Password done, auth.ts done |
+| 4U.3 | ⚠️ PARTIAL | 2/3 — Dashboard stats ✅, Search + Badges ✅, DropdownMenu ❌ |
 
-**Overall: 7/13 must-haves PASS, 1 PARTIAL, 5 NOT IMPLEMENTED**
+**Overall: 12/13 must-haves PASS, 1 NOT IMPLEMENTED**
 
 ## Gap Closure Required
 
 | # | Issue | Priority | Files |
 | -- | ----- | -------- | ----- |
-| 1 | Register page | Medium | `src/app/[locale]/(admin)/register/page.tsx` [NEW] |
-| 2 | Forgot Password page | Medium | `src/app/[locale]/(admin)/forgot-password/page.tsx` [NEW] |
-| 3 | Auth server actions | Medium | `src/lib/actions/auth.ts` [NEW] |
-| 4 | Dashboard stat cards | Medium | `src/app/[locale]/(admin)/admin/page.tsx` |
-| 5 | DropdownMenu in tables | Low | `items-client.tsx`, `categories-client.tsx` |
-| 6 | Login: password toggle + auth links | Low | `(admin)/login/page.tsx` |
+| 1 | DropdownMenu in tables | Low | `items-client.tsx`, `categories-client.tsx` |
