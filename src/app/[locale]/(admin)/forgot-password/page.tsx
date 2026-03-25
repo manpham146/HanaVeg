@@ -39,29 +39,29 @@ export default function ForgotPasswordPage() {
         <div className="min-h-screen grid lg:grid-cols-2">
             {/* Left: Form */}
             <div className="flex flex-col items-center justify-center px-6 py-12 lg:px-16 xl:px-24">
-                {/* Logo */}
-                <div className="flex items-center gap-4 mb-10">
-                    <Image
-                        src="/images/hana-badge.png"
-                        alt="Hana"
-                        width={80}
-                        height={80}
-                        className=""
-                    />
-                    <div className="flex flex-col">
-                        <span className="text-2xl font-bold tracking-tight text-[#0B1C10]">
-                            {locale === "vi"
-                                ? "Nhà hàng chay Hana"
-                                : locale === "zh"
-                                  ? "Hana素食餐厅"
-                                  : "Hana Vegetarian"}
-                        </span>
-                        <span className="text-sm text-muted-foreground">Admin Panel</span>
-                    </div>
-                </div>
-
                 {/* Form content */}
                 <div className="w-full max-w-sm">
+                    {/* Logo */}
+                    <div className="flex items-center gap-4 mb-10">
+                        <Image
+                            src="/images/hana-badge.png"
+                            alt="Hana"
+                            width={80}
+                            height={80}
+                            className=""
+                        />
+                        <div className="flex flex-col">
+                            <span className="text-2xl font-bold tracking-tight text-[#0B1C10]">
+                                {locale === "vi"
+                                    ? "Nhà hàng chay Hana"
+                                    : locale === "zh"
+                                      ? "Hana素食餐厅"
+                                      : "Hana Vegetarian"}
+                            </span>
+                            <span className="text-sm text-muted-foreground">Admin Panel</span>
+                        </div>
+                    </div>
+
                     <h1 className="text-2xl font-bold text-[#0B1C10] mb-1">
                         {t("forgotPassword")}
                     </h1>
