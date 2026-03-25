@@ -49,11 +49,11 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="flex items-center gap-3 mb-12">
                     <Image
-                        src="/images/logo-icon.png"
+                        src="/images/logo-badge.png"
                         alt="Hana"
                         width={40}
                         height={40}
-                        className="rounded-full"
+                        className=""
                     />
                     <span className="text-lg font-semibold tracking-tight text-[#0B1C10]">
                         {locale === "vi"
