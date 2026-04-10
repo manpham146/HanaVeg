@@ -5,12 +5,13 @@
 ## Current Position
 
 - **Phase**: 5
-- **Task**: Planning phase
-- **Status**: Ready
+- **Task**: Planning complete
+- **Status**: Ready for execution
 
 ## Last Session Summary
 
-Phase 4-upgrade (Admin Panel UI Redesign) đã được verify và đạt 100% PASS (12/12 must-haves). Toàn bộ quy trình nâng cấp UI bằng Shadcn đã hoàn tất kiểm chứng thực tế (3 Plans: Layout Overhaul, Auth Redesign, Dashboard Upgrade). Dự án đã sẵn sàng chuyển sang bước đánh bóng cuối cùng.
+Phase 5 planning đã hoàn tất với cấu trúc 3 task tự động hoá phần lớn quy trình SEO và chuẩn bị Deploy Vercel (theo Option A - dùng directly `next-intl` methods + `@next/third-parties` GA4).
+Các nội dung về SEO, Option A và Vercel free domain đều đã được thống nhất.
 
 ## Important Information
 
@@ -27,4 +28,4 @@ Phase 4-upgrade (Admin Panel UI Redesign) đã được verify và đạt 100% P
 
 ## Next Steps
 
-1. `/plan 5` — Lên kế hoạch chi tiết cho Phase 5 (Polish & V1 Launch)
+1. `/execute 5` — Bắt đầu quá trình chạy Phase 5 (Triển khai SEO, tích hợp Analytics, kiểm tra Vercel).
