@@ -1,6 +1,6 @@
 # ROADMAP.md
 
-> **Current Phase**: Phase 1
+> **Current Phase**: Phase 5
 > **Milestone**: v1.0
 
 ## Must-Haves (from SPEC)
@@ -37,9 +37,12 @@
 **Requirements**: REQ-06
 **Dependencies**: Phase 3 (Database setup)
 
+### Phase 4-upgrade: Admin Panel UI Redesign
+**Status**: ✅ Complete
+
 ### Phase 5: Polish & V1 Launch (Hoàn thiện & Ra mắt)
 
-**Status**: ⬜ Not Started
+**Status**: 🟡 Planned
 **Objective**: Kiểm tra lỗi, tối ưu hóa SEO Core Web Vitals, Responsive trên mobile, chèn mã Analytics/GA4 và triển khai (Deploy).
 **Requirements**: REQ-07
 **Dependencies**: Phase 4
