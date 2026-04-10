@@ -4,6 +4,27 @@
 
 ---
 
+## [2026-04-11] — Phase 5 Complete: V1 Launch 🚀
+
+### Thêm mới
+- **SEO Metadata (Option A)**: Tạo `generateMetadata` cho tất cả trang restaurant (Home, Menu, About, Gallery) thông qua Server-side `layout.tsx` pattern. Hỗ trợ đầy đủ OpenGraph metadata đa ngôn ngữ (VI, EN, ZH).
+- **Google Analytics 4**: Tích hợp GA4 bằng native `next/script`, chỉ load khi `NEXT_PUBLIC_GA_ID` tồn tại — không cần dependency bên ngoài.
+- **Vercel Deployment**: Deploy thành công lên Vercel với tên miền miễn phí `*.vercel.app`.
+
+### Sửa đổi
+- **Middleware guard**: Thêm early return trong `supabase/middleware.ts` khi thiếu env vars, ngăn crash trên Vercel.
+- **UI Polish**: Rút gọn tiêu đề Hero Slider (MÓN CHAY, HỮU CƠ) để vừa hiển thị trên 1 dòng. Tăng khoảng cách `leading-tight` + `mt` cho font Playfair Display tránh bể dấu diacritics tiếng Việt.
+- **i18n SEO**: Bổ sung `ogTitle`, `ogDescription`, và metadata riêng cho từng trang vào 3 file ngôn ngữ.
+
+### Files mới
+- `src/app/[locale]/(restaurant)/menu/layout.tsx`
+- `src/app/[locale]/(restaurant)/about/layout.tsx`
+- `src/app/[locale]/(restaurant)/gallery/layout.tsx`
+- `.gsd/phases/5/5-PLAN.md`
+- `.gsd/phases/5/5-SUMMARY.md`
+
+---
+
 ## [2026-04-10] — Hoàn tất Phase 4-upgrade (Admin Panel UI Redesign)
 
 ### Thêm mới & Cập nhật
