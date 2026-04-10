@@ -3,29 +3,20 @@
 > **Current Context**: Phase 5 (Polish & V1 Launch) — Ready for planning.
 
 ## Current Position
-
 - **Phase**: 5
-- **Task**: Planning complete
-- **Status**: Ready for execution
+- **Task**: Deploy & Verify
+- **Status**: Pending Vercel Deployment
 
 ## Last Session Summary
-
-Phase 5 planning đã hoàn tất với cấu trúc 3 task tự động hoá phần lớn quy trình SEO và chuẩn bị Deploy Vercel (theo Option A - dùng directly `next-intl` methods + `@next/third-parties` GA4).
-Các nội dung về SEO, Option A và Vercel free domain đều đã được thống nhất.
-
-## Important Information
-
-- **Stack**: Next.js 15 + Tailwind + Shadcn UI + Supabase + next-intl + Zustand
-- **i18n**: `next-intl` — 3 ngôn ngữ (VI, EN, ZH) hoạt động.
-- **Theme**: Dark green / Cream / Gold — Playfair Display + Jost (restaurant), Inter (admin).
-- **Philosophy**: An Nhiên (đã chuyển từ Thiền/Zen)
-- **Key Architecture Change**: Admin routes move to `[locale]/(admin)/` route group to isolate from restaurant Header/Footer.
-- **Database**: 9 bảng Supabase. Storage bucket `menu-images` configured.
-
-## Blockers / Unresolved Questions
-
-- _(Không có blocker nào hiện tại)_
+Phase 5 automated execution completed.
+1. Khởi tạo native GA4 Script, giải quyết vấn đề quản lý gói (không cần NPM).
+2. Xây dựng Server-Layout pattern tại `menu`, `about`, `gallery` để override `generateMetadata` cho Client Components. Cấu hình i18n OpenGraph metadata hoàn chỉnh 3 ngôn ngữ.
 
 ## Next Steps
-
-1. `/execute 5` — Bắt đầu quá trình chạy Phase 5 (Triển khai SEO, tích hợp Analytics, kiểm tra Vercel).
+1. Push code lên Github (nếu chưa làm).
+2. Kết nối repo lên nền tảng **Vercel**.
+3. Cài đặt các biến môi trường sau trong Vercel Project Settings:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `NEXT_PUBLIC_GA_ID` (Nếu có, hoặc có thể thêm sau)
+4. Verify link `*.vercel.app` trực tiếp và thông báo hoàn thành để kết thúc Phase 5.
