@@ -82,8 +82,9 @@ Trước mỗi UI element, Agent/Developer **PHẢI** làm theo thứ tự:
 
 ### 5. Quản lý Trạng thái (State Management)
 
-- Sử dụng thư viện state management chuyên nghiệp (Zustand) thay vì truyền dữ liệu thủ công (prop drilling) giữa các component.
-- Phân biệt rõ: **Global State** (UI store, Auth store, Language) quản lý bởi Zustand và **Local State** (form input) quản lý bởi `useState` / `react-hook-form`.
+- **BẮT BUỘC** sử dụng **Zustand** cho Global State. **CẤM** prop drilling giữa các component.
+- Phân biệt rõ: **Global State** (quản lý bởi Zustand) và **Local State** (quản lý bởi `useState` / `react-hook-form`).
+- Chi tiết store mapping và state diagram → xem `ARCHITECTURE_STATE_MACHINE.md`.
 
 ### 6. Responsive Mobile-First
 

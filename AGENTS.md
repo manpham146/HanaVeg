@@ -1,4 +1,4 @@
-# CLAUDE.md — Quy tắc Bắt buộc cho Agent
+# AGENTS.md — Quy tắc Bắt buộc cho Agent
 
 > **File này được tự động nạp vào context mỗi phiên làm việc.**
 > Mọi Agent/AI PHẢI tuân thủ các quy tắc dưới đây.
