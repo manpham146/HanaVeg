@@ -57,11 +57,11 @@ export default function HeroSwiper() {
                 <span className="text-[10px] tracking-[0.35em] font-sans uppercase text-background/50 mb-5 block">
                   {t(`slides.${i}.label`)}
                 </span>
-                <h1 className="font-serif leading-none mb-2">
-                  <span className="block text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-background/80 mb-1">
+                <h1 className="font-serif leading-tight mb-2">
+                  <span className="block text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-background/80 mb-2">
                     {t(`slides.${i}.title`)}
                   </span>
-                  <span className="block text-3xl sm:text-5xl md:text-6xl xl:text-8xl text-background font-bold tracking-tight">
+                  <span className="block text-3xl sm:text-5xl md:text-6xl xl:text-8xl text-background font-bold tracking-tight mt-2 sm:mt-4 md:mt-5 xl:mt-8">
                     {t(`slides.${i}.titleAccent`)}
                   </span>
                 </h1>
