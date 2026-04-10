@@ -140,10 +140,12 @@
             }
         },
         "newsletter": {
-            "title": "获取最新资讯",
-            "desc": "订阅以获取 Hana 的独家优惠、新季节菜单和特别活动。",
-            "placeholder": "您的电子邮件地址",
-            "button": "订阅"
+            "title": "发送反馈",
+            "desc": "我们始终倾听您的反馈，以带来最安然、最完整的用餐体验。",
+            "placeholderEmail": "您的电子邮件地址",
+            "contentLabel": "内容",
+            "placeholderContent": "分享您的想法...",
+            "button": "提交反馈"
         }
     },
     "About": {

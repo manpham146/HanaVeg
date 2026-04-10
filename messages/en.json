@@ -140,10 +140,12 @@
             }
         },
         "newsletter": {
-            "title": "Stay Up To Date",
-            "desc": "Subscribe to receive exclusive offers, new seasonal menus and special events from Hana.",
-            "placeholder": "Your email address",
-            "button": "Subscribe"
+            "title": "Send Feedback",
+            "desc": "We always listen to your feedback to bring the most serene and complete dining experience.",
+            "placeholderEmail": "Your email address",
+            "contentLabel": "Message",
+            "placeholderContent": "Share your thoughts...",
+            "button": "Submit Feedback"
         }
     },
     "About": {

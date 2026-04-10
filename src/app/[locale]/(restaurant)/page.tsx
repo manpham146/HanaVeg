@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import Image from 'next/image';
 import HeroSwiper from '@/components/HeroSwiper';
 
@@ -178,22 +179,32 @@ export default function Home() {
                {t('newsletter.desc')}
              </p>
           </div>
-          <form className="w-full md:w-6/12 flex items-end gap-0" onSubmit={e => e.preventDefault()}>
-             <div className="flex-1">
+          <form className="w-full md:w-6/12 flex flex-col gap-5" onSubmit={e => e.preventDefault()}>
+             <div>
                <Label className="text-[9px] tracking-[0.2em] font-sans uppercase text-foreground/50 block mb-2">{c('email')}</Label>
                <Input
                  type="email"
                  variant="underline"
-                 placeholder={t('newsletter.placeholder')}
+                 placeholder={t('newsletter.placeholderEmail')}
                />
              </div>
-             <Button
-               type="submit"
-               variant="zen"
-               className="shrink-0 ml-4 px-8 py-3 text-xs"
-             >
-               {t('newsletter.button')}
-             </Button>
+             <div>
+               <Label className="text-[9px] tracking-[0.2em] font-sans uppercase text-foreground/50 block mb-2">{t('newsletter.contentLabel')}</Label>
+               <Textarea
+                 className="resize-none bg-transparent border-0 border-b border-foreground/20 rounded-none px-0 focus-visible:ring-0 focus-visible:border-secondary transition-colors"
+                 rows={4}
+                 placeholder={t('newsletter.placeholderContent')}
+               />
+             </div>
+             <div className="flex justify-start md:justify-end mt-2">
+                 <Button
+                   type="submit"
+                   variant="zen"
+                   className="px-8 py-3 text-xs w-full sm:w-auto"
+                 >
+                   {t('newsletter.button')}
+                 </Button>
+             </div>
           </form>
         </div>
       </section>

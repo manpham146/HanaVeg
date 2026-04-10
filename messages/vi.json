@@ -140,10 +140,12 @@
             }
         },
         "newsletter": {
-            "title": "Nhận tin tức mới nhất",
-            "desc": "Đăng ký để nhận những ưu đãi độc quyền, thực đơn mùa vụ mới và các sự kiện đặc biệt từ Hana.",
-            "placeholder": "Địa chỉ email của bạn",
-            "button": "Đăng ký"
+            "title": "Gửi phản hồi",
+            "desc": "Chúng tôi luôn lắng nghe ý kiến của bạn để mang đến trải nghiệm ẩm thực an nhiên và trọn vẹn nhất.",
+            "placeholderEmail": "Địa chỉ email của bạn",
+            "contentLabel": "Nội dung",
+            "placeholderContent": "Chia sẻ cảm nhận của bạn...",
+            "button": "Gửi phản hồi"
         }
     },
     "About": {
