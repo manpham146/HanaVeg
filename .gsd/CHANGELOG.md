@@ -1,6 +1,6 @@
 # CHANGELOG — HanaVeg
 
-> Tất cả thay đổi đáng chú ý của dự án được ghi lại tại đây, nhóm theo ngày.
+> Nhật ký & tất cả thay đổi đáng chú ý của dự án, nhóm theo ngày.
 
 ---
 
@@ -12,6 +12,21 @@
 - Redesign giao diện Auth (Login, Forgot Password) theo layout split-screen.
 - Dashboard thêm các Stat Cards (Menu Items, Categories, Availability) fetch trực tiếp từ Supabase.
 - Table Menu & Categories trang bị tính năng Search và Status Badges mượt mà.
+- Trở lại dự án sau gián đoạn, audit toàn bộ GSD context, verify 12/12 must-haves PASS.
+- Đóng gói Phase 4-upgrade, chuyển trạng thái sang Phase 5 (Polish & V1 Launch).
+
+---
+
+## [2026-03-26] — Redesign Auth Pages & Logo Badge
+
+### Sửa đổi
+
+- Redesign Admin Login Page: split-layout (form trái, hình nhà hàng phải).
+- Tạo custom logo badge (`hana-badge.png`) — vòng tròn vàng, nền `#0f1f15`, transparent ngoài, anti-aliased.
+- Cập nhật split-layout cho Forgot Password page.
+- Quyết định xóa trang Register public → admin-only account creation.
+- Fix Supabase image hostname trong `next.config.ts` cho menu images.
+- Thống nhất logo mới (`hana-badge.png`) cho toàn project (Header, Footer, Sidebar, Login).
 
 ## [2026-03-08] — Chuyển đổi triết lý từ Thiền/Zen sang An Nhiên
 
@@ -106,3 +121,14 @@
 - `page.tsx` (Home) — Specialties images h-300 + w-3/4 trên mobile; banner heading text-2xl; testimonial quote text-lg; padding giảm
 - `.gsd/SPEC.md`, `CLAUDE.md` — Thêm nguyên tắc #6 Responsive Mobile-First và #7 i18n
 - Refactored UI: Bootstrapped `Input`, `Textarea`, `Select`, `Label` using shadcn-ui and customized `Button` variants (zen, ghost-nav) to migrate 10+ raw HTML fields to a standard modular design system across all pages.
+
+---
+
+## [2026-03-04] — Khởi tạo Dự án
+
+### Thêm mới
+
+- Khởi tạo dự án thông qua quy trình `/new-project`.
+- Thống nhất các trang cơ bản cho v1.0 (Home, Menu, About, Gallery, Blog).
+- Thống nhất Supabase làm Backend.
+- Đặt ra các mục tiêu tương lai: Đặt bàn, Thanh toán, Giao hàng (Out of scope cho v1.0).
