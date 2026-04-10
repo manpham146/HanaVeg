@@ -4,6 +4,15 @@
 
 ---
 
+## [2026-04-10] — Hoàn tất Phase 4-upgrade (Admin Panel UI Redesign)
+
+### Thêm mới & Cập nhật
+- Hoàn toàn tách biệt Layout Admin khỏi nhà hàng (route group `(admin)`).
+- Tích hợp thành công các component `shadcn-ui` (Sidebar, Breadcrumb, Card, Badge, Dropdown-menu).
+- Redesign giao diện Auth (Login, Forgot Password) theo layout split-screen.
+- Dashboard thêm các Stat Cards (Menu Items, Categories, Availability) fetch trực tiếp từ Supabase.
+- Table Menu & Categories trang bị tính năng Search và Status Badges mượt mà.
+
 ## [2026-03-08] — Chuyển đổi triết lý từ Thiền/Zen sang An Nhiên
 
 ### Sửa đổi

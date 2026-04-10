@@ -2,6 +2,12 @@
 
 > Nhật ký dự án hàng ngày.
 
+## 2026-04-10
+
+- Trở lại dự án sau thời gian gián đoạn.
+- Audit toàn bộ GSD context, verify thành công 12/12 must-haves của Phase 4-upgrade (Admin Panel UI Redesign).
+- Đóng gói Phase 4-upgrade và chuyển trạng thái sang Phase 5 (Polish & V1 Launch).
+
 ## 2026-03-26
 
 - Redesign Admin Login Page: split-layout (form trái, hình nhà hàng phải).
