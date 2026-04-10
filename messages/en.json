@@ -1,7 +1,21 @@
 {
     "Metadata": {
         "title": "Hana - Serenity Vegetarian Restaurant",
-        "description": "Serenity in every dining experience"
+        "description": "Serenity in every plant-based dining experience.",
+        "ogTitle": "Hana - Serenity Vegetarian Restaurant",
+        "ogDescription": "A serene oasis for vegetarian cuisine in the heart of the city.",
+        "Menu": {
+            "title": "Menu - Hana Restaurant",
+            "description": "Explore our serene vegetarian menu made with 100% organic ingredients."
+        },
+        "About": {
+            "title": "About Us - Hana Restaurant",
+            "description": "The story of our serenity philosophy and good karma connection."
+        },
+        "Gallery": {
+            "title": "Gallery - Hana Restaurant",
+            "description": "Explore the serene moments and pure vegetarian dishes at Hana."
+        }
     },
     "Common": {
         "brandName": "Hana",

@@ -1,7 +1,21 @@
 {
     "Metadata": {
         "title": "Hana - Nhà hàng Chay An Nhiên",
-        "description": "An nhiên trong từng trải nghiệm ẩm thực"
+        "description": "An nhiên trong từng trải nghiệm ẩm thực thuần thực vật.",
+        "ogTitle": "Hana - Nhà hàng Chay An Nhiên",
+        "ogDescription": "Không gian ẩm thực an nhiên giữa lòng thành phố, nơi bạn buông bỏ bộn bề.",
+        "Menu": {
+            "title": "Thực Đơn - Hana Restaurant",
+            "description": "Khám phá thực đơn chay an nhiên với 100% nguyên liệu hữu cơ tươi sạch."
+        },
+        "About": {
+            "title": "Giới Thiệu - Hana Restaurant",
+            "description": "Câu chuyện về triết lý an nhiên và hành trình kết nối thiện duyên của Hana."
+        },
+        "Gallery": {
+            "title": "Bộ Sưu Tập - Hana Restaurant",
+            "description": "Chiêm ngưỡng không gian thanh tịnh và nghệ thuật ẩm thực chay."
+        }
     },
     "Common": {
         "brandName": "Hana",

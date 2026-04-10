@@ -1,7 +1,21 @@
 {
     "Metadata": {
         "title": "Hana - 安然素食餐厅",
-        "description": "在每一次美食体验中安然自在"
+        "description": "在每一次植物性美食体验中安然自在。",
+        "ogTitle": "Hana - 安然素食餐厅",
+        "ogDescription": "城市中心的素食安然绿洲。",
+        "Menu": {
+            "title": "菜单 - Hana Restaurant",
+            "description": "探索我们100%有机食材制作的安然素食菜单。"
+        },
+        "About": {
+            "title": "关于我们 - Hana Restaurant",
+            "description": "关于我们安然哲学与善缘连接的故事。"
+        },
+        "Gallery": {
+            "title": "画廊 - Hana Restaurant",
+            "description": "欣赏 Hana 清净的空间与素食烹饪艺术。"
+        }
     },
     "Common": {
         "brandName": "Hana",
