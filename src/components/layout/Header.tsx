@@ -18,7 +18,7 @@ export default function Header() {
     { href: '/menu' as const, label: t('menu') },
     { href: '/about' as const, label: t('about') },
     { href: '/gallery' as const, label: t('gallery') },
-    { href: '/blog' as const, label: t('blog') },
+    // { href: '/blog' as const, label: t('blog') }, // TODO: Enable in v3.0
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Header() {
         <div className="flex items-center gap-3 md:gap-6">
           <nav className="hidden lg:flex items-center gap-8 font-serif text-sm tracking-widest mr-4">
             <Link href="/gallery" className="hover:text-secondary transition-colors">{t('gallery').toUpperCase()}</Link>
-            <Link href="/blog" className="hover:text-secondary transition-colors">{t('blog').toUpperCase()}</Link>
+            {/* <Link href="/blog" className="hover:text-secondary transition-colors">{t('blog').toUpperCase()}</Link> */}
           </nav>
 
           <a href={`tel:+84${c('phone').replace(/\s/g, '')}`} className="hidden sm:flex items-center gap-2 text-background/70 hover:text-secondary transition-colors font-sans text-sm tracking-wider">
@@ -62,12 +62,13 @@ export default function Header() {
 
           <LanguageSwitcher />
 
+          {/* TODO: Enable Booking in v2.0
           <Link
             href="/booking"
             className="hidden md:inline-flex bg-secondary text-primary hover:bg-gold-hover font-serif rounded-none px-6 py-2.5 text-xs tracking-widest transition-colors items-center"
           >
             {t('booking')}
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -85,14 +86,14 @@ export default function Header() {
                 {link.label.toUpperCase()}
               </Link>
             ))}
-            {/* Mobile Book a Table */}
-            <Link
+            {/* Mobile Book a Table (TODO: Enable in v2.0) */}
+            {/* <Link
               href="/booking"
               className="mt-4 mb-2 bg-secondary text-primary font-serif text-center py-3 text-xs tracking-widest hover:bg-gold-hover transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {t('booking').toUpperCase()}
-            </Link>
+            </Link> */}
             {/* Mobile phone */}
             <a href={`tel:+84${c('phone').replace(/\s/g, '')}`} className="flex items-center justify-center gap-2 py-3 text-background/60 font-sans text-sm">
               <Phone className="h-4 w-4" />

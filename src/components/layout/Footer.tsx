@@ -36,7 +36,7 @@ export default function Footer() {
               <li><Link href="/menu" className="opacity-70 hover:opacity-100 hover:text-secondary transition-all">{t('menuLink')}</Link></li>
               <li><Link href="/about" className="opacity-70 hover:opacity-100 hover:text-secondary transition-all">{t('aboutLink')}</Link></li>
               <li><Link href="/gallery" className="opacity-70 hover:opacity-100 hover:text-secondary transition-all">{t('galleryLink')}</Link></li>
-              <li><Link href="/blog" className="opacity-70 hover:opacity-100 hover:text-secondary transition-all">{t('blogLink')}</Link></li>
+              {/* <li><Link href="/blog" className="opacity-70 hover:opacity-100 hover:text-secondary transition-all">{t('blogLink')}</Link></li> */}
             </ul>
           </div>
 
