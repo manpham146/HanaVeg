@@ -53,6 +53,7 @@ Trước khi tạo bất kỳ UI element nào (`button`, `input`, `select`...), 
 | Label | `label.tsx` | variants: default, field |
 | Select | `select.tsx` | Radix Portal — popup không kế thừa CSS parent |
 | AlertDialog | `alert-dialog.tsx` | Hỗ trợ `size="sm"`, `AlertDialogMedia`, `variant` trên Action/Cancel |
+| Dialog | `dialog.tsx` | |
 | Sheet | `sheet.tsx` | Dùng cho form tạo/sửa trong admin |
 | Badge | `badge.tsx` | |
 | Checkbox | `checkbox.tsx` | |
@@ -81,7 +82,7 @@ Trang admin dùng **theme khác hoàn toàn** với trang restaurant:
 - **Sidebar Dark:** bg `#0B1C10`, text `#e8e8e0`, accent `#142a1a`, primary `#D4A100`.
 - **Layout:** `(admin)/admin/layout.tsx` → `SidebarProvider` + `SidebarInset` + `AdminBreadcrumb`.
 - **Auth:** Server-side check `supabase.auth.getUser()` + role `admin` từ bảng `profiles`.
-- **Components Admin riêng:** `AdminSidebar.tsx`, `AdminBreadcrumb.tsx` trong `src/components/admin/`.
+- **Components Admin riêng:** `AdminSidebar.tsx`, `AdminBreadcrumb.tsx`, `ImageUpload.tsx` trong `src/components/admin/`.
 
 > **QUY TẮC:** Khi code admin, KHÔNG custom inline style. Dùng shadcn component props chuẩn (`variant`, `size`).
 
@@ -117,19 +118,19 @@ Trang admin dùng **theme khác hoàn toàn** với trang restaurant:
 
 ## 3. Tech Stack
 
-- **Framework:** Next.js App Router
-- **Styling:** Tailwind CSS + Shadcn UI + Framer Motion
+- **Framework:** Next.js 16 App Router
+- **Styling:** Tailwind CSS 4 + Shadcn UI + Framer Motion
 - **Language:** TypeScript (Strict, no `any`)
 - **Backend:** Supabase (PostgreSQL + Auth + Storage)
-- **i18n:** next-intl (VI, EN, ZH)
-- **State:** Zustand
+- **i18n:** next-intl 4 (VI, EN, ZH)
+- **State:** Zustand 5
 
 ## 4. Cấu trúc Thư mục Chính
 
 ```
 src/
 ├── app/[locale]/
-│   ├── (restaurant)/    # Trang khách (page, menu, booking, blog...)
+│   ├── (restaurant)/    # Trang khách (page, menu, about, gallery, booking, blog)
 │   ├── (admin)/
 │   │   ├── layout.tsx   # font-inter wrapper
 │   │   ├── admin/
@@ -137,18 +138,21 @@ src/
 │   │   │   ├── page.tsx     # Dashboard
 │   │   │   ├── menu/        # CRUD Món ăn
 │   │   │   └── categories/  # CRUD Danh mục
-│   │   └── login/       # Admin login
-│   └── layout.tsx       # Root layout (fonts, theme)
+│   │   ├── login/           # Admin login
+│   │   └── forgot-password/ # Quên mật khẩu
+│   └── layout.tsx       # Root layout (fonts, theme, GA4)
 ├── components/
-│   ├── ui/              # Shadcn UI components
-│   ├── admin/           # AdminSidebar, AdminBreadcrumb
+│   ├── ui/              # Shadcn UI components (21 files)
+│   ├── admin/           # AdminSidebar, AdminBreadcrumb, ImageUpload
 │   └── layout/          # Header, Footer, Navigation
 ├── lib/
-│   └── actions/         # Server Actions (item, category)
+│   ├── actions/         # Server Actions (item, category, auth)
+│   └── api/             # Client API helpers (menu, booking)
 ├── types/               # TypeScript types/interfaces
-├── stores/              # Zustand stores
-├── i18n/                # i18n configuration
-└── utils/               # Supabase client/server helpers
+├── stores/              # Zustand stores (ui-store, auth-store)
+├── hooks/               # Custom React hooks
+├── i18n/                # i18n configuration (routing, request)
+└── utils/               # Supabase client/server/middleware helpers
 ```
 
 ## 5. Quy trình Làm việc
